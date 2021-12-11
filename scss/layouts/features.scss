@@ -11,13 +11,18 @@
 }
 
 .card {
-    @include flexCenter;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr  ;
     background-color: black;
+    place-items: center;
     color: white;
     border: .3rem $light--brown solid;
     border-radius: 3rem;
     padding: 5rem 3rem 5rem 3rem;
+    height: 75%;
+    width: 60%;
+    
 
     &__header {
         font-size: 7rem;
