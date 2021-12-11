@@ -11,14 +11,12 @@
     &__logo {
         height: inherit;
         letter-spacing: 1rem;
-        font-size: 4rem;
-        font-weight: 800;
         
     }
 
     &__header {
         font-family: 'Dancing Script', cursive;
-        font-size: 10rem;
+        font-size: 7rem;
         letter-spacing: .7rem;
         justify-self: center;
         align-self: center;
@@ -27,7 +25,7 @@
 
     &__links {
         @include flexCenter;
-        font-size: 3.2rem;
+        font-size: 2rem;
         letter-spacing: .2rem;
         margin-left: auto;
     }
