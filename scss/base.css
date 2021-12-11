@@ -1,13 +1,9 @@
-@use './abstracts' as *;
-@use './base' as *;
-@use './components' as *;
-@use './custom-partials' as *;
-@use './layout' as *;
-@use './themes' as *;
+/* abstracts */
+/* base */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap");
 html {
   font-size: 62.5%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 * {
@@ -18,25 +14,53 @@ html {
 *,
 *::before,
 **::after {
-  -webkit-box-sizing: black;
-          box-sizing: black;
+  box-sizing: inherit;
 }
 
 body {
-  background-color: red;
-  font-family: 'Montserrat', sans-serif;
+  background-color: black;
+  font-family: "Montserrat", sans-serif;
 }
 
+/* components */
+/* custom-partials */
+/* layouts */
 .navbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  background-color: black;
-  color: gold;
-  padding: 2rem;
+  flex-direction: row;
+  background-color: rgba(0, 0, 0, 0.521);
+  color: #d6ba1a;
+  padding: 3rem;
+  height: 7vh;
 }
+.navbar__logo {
+  height: inherit;
+  letter-spacing: 1rem;
+  font-size: 4rem;
+  font-weight: 800;
+}
+.navbar__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-left: auto;
+  font-size: 3.2rem;
+  letter-spacing: 0.2rem;
+}
+.navbar__link {
+  margin-left: 4rem;
+}
+
+.main {
+  height: 95vh;
+  background-color: green;
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.767), rgba(37, 31, 31, 0.658)), url("../../images/rozlewac.jpeg");
+  background-size: cover;
+  background-position: right;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+/* themes */
+
 /*# sourceMappingURL=base.css.map */
