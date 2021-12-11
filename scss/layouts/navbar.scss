@@ -1,12 +1,12 @@
 @import '../abstracts/mixins.scss';
 
 .navbar {
-    display: flex;
-    flex-direction: row;
-    background-color: rgba(0, 0, 0, 0.521);
-    color:rgb(214, 186, 26);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color:rgb(255, 217, 0);
     padding: 3rem;
     height: 7vh;
+    border-bottom: 2px solid rgba(255, 217, 0, 0.664);
 
     &__logo {
         height: inherit;
@@ -16,15 +16,27 @@
         
     }
 
+    &__header {
+        font-family: 'Dancing Script', cursive;
+        font-size: 10rem;
+        letter-spacing: .7rem;
+        justify-self: center;
+        align-self: center;
+        
+    }
+
     &__links {
         @include flexCenter;
-        flex-direction: row;
-        margin-left: auto;  
         font-size: 3.2rem;
         letter-spacing: .2rem;
+        margin-left: auto;
     }
 
     &__link {
-        margin-left: 4rem;
+       padding-right: 2rem;
+
+        &:last-child {
+            padding-right: 0;
+        }
     }
 }
