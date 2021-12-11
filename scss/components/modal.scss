@@ -1,0 +1,51 @@
+.modal {
+    color: red;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.452);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    &__card {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        background-color: white;
+        height: 45vh;
+        width: 60vw;
+    }
+
+    &__close-button {
+        position: absolute;
+        right: 0;
+        padding: 5px;
+        border: 0;
+        background-color: transparent;
+        display: inline-block;
+        cursor: pointer;
+        &--sign-box {
+            width: 5rem;
+            height: 1rem;
+            display: inline-block;
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        &--sign-inner{
+        
+            &::after {
+            @include modalCloseButton;
+            transform: rotate(-45deg);
+        }
+        
+        &::before {
+            @include modalCloseButton;
+            transform: rotate(45deg);
+        }
+      }
+    }
+
+}

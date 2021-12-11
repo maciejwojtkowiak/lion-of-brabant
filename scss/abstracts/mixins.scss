@@ -3,3 +3,16 @@
     justify-content: center;
     align-items: center;
 }
+
+@mixin modalCloseButton {
+    content: '';
+    height: .5rem;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: rotate(-45deg);
+    background-color: white;
+    color: white;
+    transform-origin: center
+}
