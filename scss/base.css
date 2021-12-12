@@ -249,19 +249,26 @@ body {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  left: 0;
   z-index: 10;
   border: none;
-  padding: 2rem;
+  color: #886841;
+  font-size: 5rem;
+  display: inline-block;
+  background-color: transparent;
+  left: 5%;
+  background-size: 100%;
 }
 .slider__next {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  right: 0;
   z-index: 10;
   border: none;
-  padding: 2rem;
+  color: #886841;
+  font-size: 5rem;
+  display: inline-block;
+  background-color: transparent;
+  right: 5%;
 }
 
 .slide {
