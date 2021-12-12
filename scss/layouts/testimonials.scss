@@ -1,0 +1,32 @@
+@import '../abstracts/variables.scss';
+
+.testimonials {
+    display: grid;
+    place-items: center;
+    margin-top: 5rem;
+    &__header {
+        letter-spacing: 1rem;
+        color: $light--brown ;
+        font-weight: 400;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    &__card {
+        @include boxBorder;
+        height: 65vh;
+        width: 60vw;
+        color: white;
+        position: relative;
+        @include flexCenter;
+
+        &::before {
+            content: '``';
+            position: absolute;
+            top:0;
+            left: 0;
+            color: $light--brown;
+            font-size: 10rem;
+        }
+    }
+}
