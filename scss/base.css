@@ -241,6 +241,25 @@ body {
   color: #886841;
   font-weight: 400;
   font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.testimonials__card {
+  border: 0.3rem #886841 solid;
+  height: 65vh;
+  width: 60vw;
+  color: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.testimonials__card::before {
+  content: "``";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #886841;
+  font-size: 10rem;
 }
 
 /* themes */

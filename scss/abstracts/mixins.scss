@@ -32,3 +32,7 @@
 @mixin borderBottomPrimary {
     border-bottom: .2rem solid $light--brown;
 }
+
+@mixin boxBorder {
+    border: .3rem $light--brown solid;
+}
