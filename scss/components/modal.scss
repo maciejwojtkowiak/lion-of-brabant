@@ -1,26 +1,51 @@
+@import '../abstracts/mixins.scss';
+
 .modal {
-    color: red;
     position: fixed;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.452);
-    overflow: hidden;
-    backdrop-filter: blur(10px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    border: black px solid;
+    z-index: 1;
+
     &__card {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
-        background-color: white;
-        height: 45vh;
+        display: flex;
+        height: 65vh;
         width: 60vw;
     }
+    
+    &__image {
+        @include modalImagePosition;
+        background-color: black;
+        background-image: url('../../images/recipe.jpg');
+        flex: 4;
+        
+
+    }
+
+    &__description {
+        background-color: rgba(0, 0, 0, 0.897);
+        flex: 5;
+    }
+    
+
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.274);
+    position: fixed;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    top: 0;
+    left: 0;
 
     &__close-button {
-        position: absolute;
-        right: 0;
+        position: fixed;
+        top: 5%;
+        right: 5%;
         padding: 5px;
         border: 0;
         background-color: transparent;
@@ -30,7 +55,7 @@
             width: 5rem;
             height: 1rem;
             display: inline-block;
-            position: relative;
+            position: fixed;
             margin-top: 2rem;
         }
 
@@ -47,5 +72,4 @@
         }
       }
     }
-
 }
