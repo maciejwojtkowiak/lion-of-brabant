@@ -1,12 +1,13 @@
 @import '../abstracts/mixins.scss';
+@import '../abstracts/variables.scss';
 
 .navbar {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    color:rgb(255, 217, 0);
+    color: $light--brown;
     padding: 3rem;
     height: 7vh;
-    border-bottom: 2px solid rgba(255, 217, 0, 0.664);
+    border-bottom: 2px solid $light--brown;
 
     &__logo {
         height: inherit;
@@ -28,6 +29,7 @@
         font-size: 2rem;
         letter-spacing: .2rem;
         margin-left: auto;
+        color: $light--brown;
     }
 
     &__link {
