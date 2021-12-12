@@ -2,6 +2,7 @@
 /* base */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -159,7 +160,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.767), rgba(37, 31, 31, 0.658)), url("../../images/rozlewac.jpeg");
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.767), rgba(37, 31, 31, 0.658)), url("../../images/champagne.jpeg");
   background-size: cover;
   background-position: right;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
@@ -231,35 +232,76 @@ body {
   font-weight: 200;
 }
 
-.testimonials {
+.slider {
+  width: 100%;
+  height: 95vh;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-items: stretch center;
+}
+.slider__header {
+  margin-top: 10rem;
+  color: #886841;
+  font-size: 3rem;
+}
+.slider__previous {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 0;
+  z-index: 10;
+  border: none;
+  padding: 2rem;
+}
+.slider__next {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 0;
+  z-index: 10;
+  border: none;
+  padding: 2rem;
+}
+
+.slide {
+  position: absolute;
+  transition: all 0.7s;
+  width: 100%;
+  height: 95vh;
   display: grid;
   place-items: center;
-  margin-top: 5rem;
 }
-.testimonials__header {
-  letter-spacing: 1rem;
-  color: #886841;
-  font-weight: 400;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-.testimonials__card {
-  border: 0.3rem #886841 solid;
-  height: 65vh;
+.slide__card {
   width: 60vw;
+  height: 60%;
+  border: 0.3rem #886841 solid;
   color: white;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
 }
-.testimonials__card::before {
-  content: "``";
+.slide__card__header {
+  font-size: 5.5rem;
+  padding-bottom: 5rem;
+}
+.slide__card__opinion {
+  font-size: 1.6rem;
+}
+.slide__card__user {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+}
+.slide__card::before {
+  content: '"';
   position: absolute;
   top: 0;
-  left: 0;
+  left: 5%;
   color: #886841;
-  font-size: 10rem;
+  opacity: 0.8;
+  font-family: "Secular One", serif;
+  font-size: 12rem;
 }
 
 /* themes */
