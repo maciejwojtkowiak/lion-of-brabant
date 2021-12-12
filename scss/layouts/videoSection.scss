@@ -1,13 +1,14 @@
 @import '../abstracts/mixins.scss';
 
 .gif {
+    @include flexCenter;
     height: 70vh;
     background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.295), rgba(37, 31, 31, 0.295)), url('../../gifs/vineyard.gif');
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: bottom;
     transform: scale(1);
-    @include flexCenter;
+    @include borderBottomPrimary;
 
     &__header {
         font-size: 8rem;

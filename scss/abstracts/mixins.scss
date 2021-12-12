@@ -1,3 +1,6 @@
+@import 'variables.scss';
+
+
 @mixin flexCenter {
     display: flex;
     justify-content: center;
@@ -24,4 +27,8 @@
 
 @mixin blackGradient {
     background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.767), rgba(37, 31, 31, 0.658));
+}
+
+@mixin borderBottomPrimary {
+    border-bottom: .2rem solid $light--brown;
 }

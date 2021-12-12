@@ -1,0 +1,13 @@
+@import '../abstracts/variables.scss';
+
+.testimonials {
+    display: grid;
+    place-items: center;
+    margin-top: 5rem;
+    &__header {
+        letter-spacing: 1rem;
+        color: $light--brown ;
+        font-weight: 400;
+        font-size: 2rem;
+    }
+}

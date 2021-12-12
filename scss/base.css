@@ -33,7 +33,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: black px solid;
   z-index: 1;
 }
 .modal__card {
@@ -46,8 +45,20 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: black;
-  background-image: url("../../images/recipe.jpg");
   flex: 4;
+  border: none;
+  outline: none;
+}
+.modal__image--1 {
+  background-image: url("../../images/sparkling.jpg");
+  background-position: center;
+}
+.modal__image--2 {
+  background-image: url("../../images/sustainable.jpg");
+  background-position: center;
+}
+.modal__image--3 {
+  background-image: url("../../images/recipe.jpg");
 }
 .modal__description {
   background-color: rgba(0, 0, 0, 0.897);
@@ -60,7 +71,7 @@ body {
   background-color: rgba(0, 0, 0, 0.274);
   position: fixed;
   overflow: hidden;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   top: 0;
   left: 0;
 }
@@ -114,7 +125,7 @@ body {
   color: #886841;
   padding: 3rem;
   height: 7vh;
-  border-bottom: 2px solid #886841;
+  border-bottom: 0.2rem solid #886841;
 }
 .navbar__logo {
   height: inherit;
@@ -160,7 +171,7 @@ body {
 }
 
 .features {
-  border-bottom: 2px #886841 solid;
+  border-bottom: 0.2rem solid #886841;
   padding: 15rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -202,21 +213,34 @@ body {
 }
 
 .gif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 70vh;
   background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.295), rgba(37, 31, 31, 0.295)), url("../../gifs/vineyard.gif");
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: bottom;
   transform: scale(1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-bottom: 0.2rem solid #886841;
 }
 .gif__header {
   font-size: 8rem;
   color: white;
   letter-spacing: 1.2rem;
   font-weight: 200;
+}
+
+.testimonials {
+  display: grid;
+  place-items: center;
+  margin-top: 5rem;
+}
+.testimonials__header {
+  letter-spacing: 1rem;
+  color: #886841;
+  font-weight: 400;
+  font-size: 2rem;
 }
 
 /* themes */

@@ -1,7 +1,8 @@
 @import '../abstracts/variables.scss';
+@import '../abstracts/mixins.scss';
 
 .features {
-    border-bottom: 2px $light--brown solid;
+    @include borderBottomPrimary;
     padding: 15rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

@@ -2,7 +2,6 @@
 
 class Champagne {
     #modalButtons = document.querySelectorAll('.card__modal-button')
-    #modalWindows = document.querySelector('.modal')
     #modalOverlay = document.querySelector('.overlay')
     #activeModal;
     constructor() {
