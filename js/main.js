@@ -69,7 +69,7 @@ const champagne = new Champagne;
 
 
     const navbar = document.querySelector('.navbar')
-    const main = document.querySelector('.main')
+    const main = document.querySelector('.header')
     const navHeight = navbar.getBoundingClientRect().height;
     
     console.log(navHeight)
@@ -87,7 +87,7 @@ const champagne = new Champagne;
     let observer = new IntersectionObserver(callback,{
         root: null,
         threshold: 0,
-        rootMargin: `-${navHeight * 3}px`,
+        rootMargin: `-${navHeight}px`,
       });
       ;
 
