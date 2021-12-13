@@ -1,0 +1,13 @@
+@import '../abstracts/variables.scss';
+
+::-webkit-scrollbar {
+    width: 1rem;
+    
+}
+  
+
+::-webkit-scrollbar-thumb {
+    width: .2rem;
+    background-color: $light--brown;
+    border-radius: 10rem;
+}

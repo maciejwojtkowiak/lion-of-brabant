@@ -36,3 +36,15 @@
 @mixin boxBorder {
     border: .3rem $light--brown solid;
 }
+
+@mixin slideButton {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 10;
+    border: none;
+    color: $light--brown;
+    font-size: 5rem;
+    display: inline-block;
+    background-color: transparent
+}
