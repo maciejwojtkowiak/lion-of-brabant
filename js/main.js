@@ -5,10 +5,14 @@ class Champagne {
     #modalOverlay = document.querySelector('.overlay');
     #slides = document.querySelectorAll('.slide');
     #activeModal;
+    #navbar = document.querySelector('.navbar');
+    #main = document.querySelector('.main');
+    #section2 = document.querySelector('#section--2')
     constructor() {
         this._showModal();
         this._hideModal();
         this._slider();
+       
     }
 
     _showModal() {
@@ -57,7 +61,40 @@ class Champagne {
     _moveToSlide(slide) {
         this.#slides.forEach((sli, i) => sli.style.transform = `translateX(${(i - slide) * 100}%)`) ;
     }
+
+    
 };
 
 const champagne = new Champagne;
+
+
+    const navbar = document.querySelector('.navbar')
+    const main = document.querySelector('.main')
+    const navHeight = navbar.getBoundingClientRect().height;
+    
+    console.log(navHeight)
+
+    const callback = function(entries, observer) {
+        const [entry] = entries;
+        console.log(entry)
+        if (!entry.isIntersecting) {
+            console.log('ser')
+            navbar.classList.add('sticky')
+        } else {
+            navbar.classList.remove('sticky') 
+            
+        }
+    }
+    let observer = new IntersectionObserver(callback,{
+        root: null,
+        threshold: 0.8,
+        rootMargin: `-${navHeight}px`,
+      });
+      ;
+
+    observer.observe(main);
+
+
+   
+        
 

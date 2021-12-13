@@ -8,9 +8,8 @@
     position: relative;
     display: grid;
     place-items: stretch center;
+    @include borderBottomPrimary;
 
-   
-    
     &__header {
         margin-top: 10rem;
         color: $light--brown;
@@ -26,10 +25,7 @@
         @include slideButton;
         right: 5%;
     }
-    
-  
 }
-
 
 .slide {
     position: absolute;
@@ -41,19 +37,21 @@
 
 
     &__card {
-        width: 60vw;
+        width: 40vw;
         height: 60%;
         @include boxBorder;
         color: white;
-        flex-direction: column;
-        text-align: center;
         position: absolute;
+        @include flexCenter;
+        flex-direction: column;
+        gap: 6rem;
+        padding: 0 10rem;
+        text-align: center;
         &__header {
             font-size: 5.5rem;
-            padding-bottom: 5rem;
         }
         &__opinion {
-            font-size: 1.6rem;
+            font-size: 2rem;
         }
 
         &__user {

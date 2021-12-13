@@ -2,16 +2,21 @@
 @import '../abstracts/variables.scss';
 
 .navbar {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     color: $light--brown;
-    padding: 3rem;
     height: 7vh;
+    width: 100%;
+    background-color: black;
+    z-index: 100;
     @include borderBottomPrimary;
 
     &__logo {
         height: inherit;
         letter-spacing: 1rem;
+        margin-right: auto;
         
     }
 
@@ -28,8 +33,10 @@
         @include flexCenter;
         font-size: 2rem;
         letter-spacing: .2rem;
-        margin-left: auto;
         color: $light--brown;
+        justify-self: center end ;
+        align-self: center end;
+        margin-left: auto;
     }
 
     &__link {
