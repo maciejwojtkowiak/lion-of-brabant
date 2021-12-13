@@ -21,6 +21,8 @@ class Champagne {
             if (!clicked) return;
             this.#activeModal = document.querySelector(`.modal--${clicked.dataset.but}`);
             this._modalToggleClasses();
+            document.body.style.overflow = "hidden"
+            
         }));
     };
 
@@ -28,6 +30,8 @@ class Champagne {
         this.#modalOverlay.addEventListener('click', (e) => {
            if(e.target.closest('.overlay')) {
             this._modalToggleClasses();
+            document.body.style.overflow = "visible"
+            
            };
         });
     };
@@ -35,6 +39,7 @@ class Champagne {
     _modalToggleClasses() {
         this.#modalOverlay.classList.toggle('hidden');
         this.#activeModal.classList.toggle('hidden');
+        document.body.classList.remove('overf')
     };
 
     _slider() {
