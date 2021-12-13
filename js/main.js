@@ -46,14 +46,14 @@ class Champagne {
 
         buttonBack.addEventListener('click', (e) => {
             currSlide--
-            currSlide = currSlide < 0 ? currSlide = 0 : currSlide;
+            currSlide = currSlide < 0 ? currSlide = slideLength : currSlide;
             this._moveToSlide(currSlide);
             
         });
 
         buttonForward.addEventListener('click', (e) => {
             currSlide++
-            currSlide = currSlide > slideLength ? slideLength : currSlide;
+            currSlide = currSlide > slideLength ? 0 : currSlide;
             this._moveToSlide(currSlide);
         });
     };
