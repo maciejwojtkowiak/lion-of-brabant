@@ -129,15 +129,8 @@ body {
   border-radius: 10rem;
 }
 
-.sticky {
-  transition: all 0.5s;
-  position: fixed;
-  border: none !important;
-}
-
-/* custom-partials */
-/* layouts */
 .navbar {
+  position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -147,6 +140,7 @@ body {
   width: 100%;
   background-color: black;
   z-index: 100;
+  transition: all 0.5s;
   border-bottom: 0.2rem solid #886841;
 }
 .navbar__logo {
@@ -177,6 +171,62 @@ body {
 }
 .navbar__link:last-child {
   padding-right: 0;
+}
+
+.navbar.sticky {
+  position: fixed;
+  border: none !important;
+}
+
+/* custom-partials */
+/* layouts */
+.navbar {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #886841;
+  height: 7vh;
+  width: 100%;
+  background-color: black;
+  z-index: 100;
+  transition: all 0.5s;
+  border-bottom: 0.2rem solid #886841;
+}
+.navbar__logo {
+  height: inherit;
+  letter-spacing: 1rem;
+  margin-right: auto;
+}
+.navbar__header {
+  font-family: "Dancing Script", cursive;
+  font-size: 7rem;
+  letter-spacing: 0.7rem;
+  justify-self: center;
+  align-self: center;
+}
+.navbar__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  color: #886841;
+  justify-self: center end;
+  align-self: center end;
+  margin-left: auto;
+}
+.navbar__link {
+  padding-right: 2rem;
+}
+.navbar__link:last-child {
+  padding-right: 0;
+}
+
+.navbar.sticky {
+  position: fixed;
+  border: none !important;
 }
 
 .main {
@@ -214,8 +264,8 @@ body {
   border: 0.3rem #886841 solid;
   border-radius: 3rem;
   padding: 5rem 3rem 5rem 3rem;
-  height: 75%;
-  width: 60%;
+  height: 50vh;
+  width: 20vw;
 }
 .card__header {
   font-size: 7rem;

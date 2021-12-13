@@ -82,13 +82,12 @@ const champagne = new Champagne;
             navbar.classList.add('sticky')
         } else {
             navbar.classList.remove('sticky') 
-            
         }
     }
     let observer = new IntersectionObserver(callback,{
         root: null,
-        threshold: 0.8,
-        rootMargin: `-${navHeight}px`,
+        threshold: 0,
+        rootMargin: `-${navHeight * 3}px`,
       });
       ;
 
