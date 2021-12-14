@@ -97,9 +97,18 @@ class Champagne {
         buttons.forEach(but => {
             but.addEventListener('click', (e) => {
                 e.preventDefault()
-                const sectionToScroll = but.getAttribute('href');
-                console.log(sectionToScroll)
-                document.querySelector(sectionToScroll).scrollIntoView({behavior: 'smooth'})
+                const anchorLink = but.getAttribute('href');
+                const sectionToScroll = document.querySelector(anchorLink);
+                const sectionCord = sectionToScroll.getBoundingClientRect()
+                const navbar =  document.querySelector('.navbar');
+                const navHeight = navbar.getBoundingClientRect().height
+                sectionToScroll.scrollIntoView({behavior: 'smooth'})
+                // smooth scrolling, ignoring navbar which prevent it from overlapping section.
+                window.scrollTo({
+                    top: sectionCord.top + window.pageYOffset - navHeight,
+                    left: sectionCord.left + window.pageXOffset,
+                    behavior: 'smooth',
+                  });
             })
         });
     };

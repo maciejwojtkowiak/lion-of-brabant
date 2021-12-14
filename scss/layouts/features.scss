@@ -3,7 +3,7 @@
 
 .features {
     @include borderBottomPrimary;
-    padding: 15rem 0;
+    padding: 20rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     place-items: center;
@@ -21,7 +21,7 @@
     @include boxBorder;
     border-radius: 3rem;
     padding: 5rem 3rem 5rem 3rem;
-    height: 50vh;
+    height: 40vh;
     width: 20vw;
     
 
