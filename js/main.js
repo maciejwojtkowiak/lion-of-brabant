@@ -9,6 +9,9 @@ class Champagne {
         this._showModal();
         this._hideModal();
         this._slider();
+        this._fixedNavbar();
+        this._smoothScroll();
+       
     }
 
     _showModal() {
@@ -17,6 +20,8 @@ class Champagne {
             if (!clicked) return;
             this.#activeModal = document.querySelector(`.modal--${clicked.dataset.but}`);
             this._modalToggleClasses();
+            document.body.style.overflow = "hidden"
+            
         }));
     };
 
@@ -24,6 +29,8 @@ class Champagne {
         this.#modalOverlay.addEventListener('click', (e) => {
            if(e.target.closest('.overlay')) {
             this._modalToggleClasses();
+            document.body.style.overflow = "visible"
+            
            };
         });
     };
@@ -31,6 +38,7 @@ class Champagne {
     _modalToggleClasses() {
         this.#modalOverlay.classList.toggle('hidden');
         this.#activeModal.classList.toggle('hidden');
+        document.body.classList.remove('overf')
     };
 
     _slider() {
@@ -42,14 +50,14 @@ class Champagne {
 
         buttonBack.addEventListener('click', (e) => {
             currSlide--
-            currSlide = currSlide < 0 ? currSlide = 0 : currSlide;
+            currSlide = currSlide < 0 ? currSlide = slideLength : currSlide;
             this._moveToSlide(currSlide);
             
         });
 
         buttonForward.addEventListener('click', (e) => {
             currSlide++
-            currSlide = currSlide > slideLength ? slideLength : currSlide;
+            currSlide = currSlide > slideLength ? 0 : currSlide;
             this._moveToSlide(currSlide);
         });
     };
@@ -57,7 +65,77 @@ class Champagne {
     _moveToSlide(slide) {
         this.#slides.forEach((sli, i) => sli.style.transform = `translateX(${(i - slide) * 100}%)`) ;
     }
+
+    _fixedNavbar() {
+        const navbar =  document.querySelector('.navbar');
+        const main = document.querySelector('.header');
+        const navHeight = navbar.getBoundingClientRect().height;
+    
+        const callback = function(entries, observer) {
+            const [entry] = entries;
+            console.log(entry)
+            if (!entry.isIntersecting) {
+                console.log('ser');
+                navbar.classList.add('sticky');
+            } else {
+                navbar.classList.remove('sticky') ;
+            };
+        };
+        let observer = new IntersectionObserver(callback,{
+            root: null,
+            threshold: 0,
+            rootMargin: `-${navHeight}px`,
+          });
+          ;
+    
+        observer.observe(main);
+    
+    };
+
+    _smoothScroll() {
+        const buttons = document.querySelectorAll('.navbar__link');
+        buttons.forEach(but => {
+            but.addEventListener('click', (e) => {
+                e.preventDefault()
+                const anchorLink = but.getAttribute('href');
+                const sectionToScroll = document.querySelector(anchorLink);
+                const sectionCord = sectionToScroll.getBoundingClientRect()
+                const navbar =  document.querySelector('.navbar');
+                const navHeight = navbar.getBoundingClientRect().height
+                sectionToScroll.scrollIntoView({behavior: 'smooth'})
+                // smooth scrolling, ignoring navbar which prevent it from overlapping section.
+                window.scrollTo({
+                    top: sectionCord.top + window.pageYOffset - navHeight,
+                    left: sectionCord.left + window.pageXOffset,
+                    behavior: 'smooth',
+                  });
+            })
+        });
+    };
+    
 };
 
 const champagne = new Champagne;
+
+
+/* old fashioned smooth scrolling
+const anchor = document.querySelector('.anchor');
+anchor.addEventListener('click', (e) => {
+    const section1 = document.querySelector('.section2');
+    const section1Cord = section1.getBoundingClientRect()
+    window.scrollTo({
+           top: section1Cord.top + window.pageYOffset,
+           left: section1Cord.left + window.pageXOffset,
+           behavior: 'smooth',
+         });
+})
+
+*/
+
+
+
+   
+
+   
+        
 

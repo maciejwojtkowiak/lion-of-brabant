@@ -4,14 +4,21 @@
 .navbar {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
     color: $light--brown;
-    padding: 3rem;
     height: 7vh;
+    width: 100%;
+    background-color: black;
+    z-index: 1;
+    transition: all .5s;
+    padding: 2rem 0;
     @include borderBottomPrimary;
 
     &__logo {
         height: inherit;
         letter-spacing: 1rem;
+        margin-right: auto;
+        margin-left: 2rem;
         
     }
 
@@ -28,8 +35,11 @@
         @include flexCenter;
         font-size: 2rem;
         letter-spacing: .2rem;
-        margin-left: auto;
         color: $light--brown;
+        justify-self: center end ;
+        align-self: center end;
+        margin-left: auto;
+        margin-right: 2rem;
     }
 
     &__link {
@@ -39,4 +49,14 @@
             padding-right: 0;
         }
     }
+}
+
+
+.navbar.sticky {
+    position: fixed;
+   
+}
+
+.header {
+    height: 100vh;
 }
