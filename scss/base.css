@@ -132,10 +132,9 @@ body {
 }
 
 .navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
   color: #886841;
   height: 7vh;
   width: 100%;
@@ -149,6 +148,7 @@ body {
   height: inherit;
   letter-spacing: 1rem;
   margin-right: auto;
+  margin-left: 2rem;
 }
 .navbar__header {
   font-family: "Dancing Script", cursive;
@@ -167,6 +167,7 @@ body {
   justify-self: center end;
   align-self: center end;
   margin-left: auto;
+  margin-right: 2rem;
 }
 .navbar__link {
   padding-right: 2rem;
@@ -186,10 +187,9 @@ body {
 /* custom-partials */
 /* layouts */
 .navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
   color: #886841;
   height: 7vh;
   width: 100%;
@@ -203,6 +203,7 @@ body {
   height: inherit;
   letter-spacing: 1rem;
   margin-right: auto;
+  margin-left: 2rem;
 }
 .navbar__header {
   font-family: "Dancing Script", cursive;
@@ -221,6 +222,7 @@ body {
   justify-self: center end;
   align-self: center end;
   margin-left: auto;
+  margin-right: 2rem;
 }
 .navbar__link {
   padding-right: 2rem;
