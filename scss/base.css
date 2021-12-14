@@ -28,6 +28,14 @@ body {
   display: none;
 }
 
+@keyframes mainFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* components */
 .modal {
   position: fixed;
@@ -163,7 +171,6 @@ body {
   align-items: center;
   font-size: 2rem;
   letter-spacing: 0.2rem;
-  color: #886841;
   justify-self: center end;
   align-self: center end;
   margin-left: auto;
@@ -171,6 +178,8 @@ body {
 }
 .navbar__link {
   padding-right: 2rem;
+  text-decoration: none;
+  color: #886841;
 }
 .navbar__link:last-child {
   padding-right: 0;
@@ -218,7 +227,6 @@ body {
   align-items: center;
   font-size: 2rem;
   letter-spacing: 0.2rem;
-  color: #886841;
   justify-self: center end;
   align-self: center end;
   margin-left: auto;
@@ -226,6 +234,8 @@ body {
 }
 .navbar__link {
   padding-right: 2rem;
+  text-decoration: none;
+  color: #886841;
 }
 .navbar__link:last-child {
   padding-right: 0;
@@ -239,6 +249,14 @@ body {
   height: 100vh;
 }
 
+@keyframes mainFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .main {
   display: flex;
   justify-content: center;
@@ -253,6 +271,7 @@ body {
   color: white;
   font-size: 15rem;
   margin-bottom: 15rem;
+  animation: mainFadeIn 1.5s ease-out;
 }
 
 .features {

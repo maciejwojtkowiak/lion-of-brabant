@@ -1,3 +1,7 @@
+@import '../base/animations.scss';
+
+
+
 .main {
     @include flexCenter;
     height: 95vh;
@@ -10,5 +14,6 @@
         color: white;
         font-size: 15rem;
         margin-bottom: 15rem;
+        animation: mainFadeIn 1.5s ease-out ;
     }
 }
