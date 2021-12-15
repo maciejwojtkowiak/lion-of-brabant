@@ -10,7 +10,7 @@
     <body>
        <header class="header">
         <nav class="navbar">
-            <img src="/images/Brabant.png" class="navbar__logo">
+            <a class="navbar__logo navbar__link" href="#section--1"><img class="navbar__logo" src="/images/Brabant.png"></a>
             <h1 class="navbar__header">Lion of Brabant</h1>
             <div class="navbar__links">
                 <a class="navbar__link" href="#section--2" >about</a>
@@ -130,7 +130,7 @@
                             Fusce ut porta tellus. Duis varius tincidunt odio non pharetra. 
                             Lorem ipsum
                             Curabitur bibendum ornare consequat.</p>
-                        <img src="images/man1.jpeg" class="slide__card__user">
+                        <div><img src="images/man1.jpeg" class="slide__card__user"><p>Adam, bankist.</p></div>
                     </div>
                 </div>
         
@@ -157,7 +157,29 @@
         </section>
         
         <footer class="footer">
-            <h4>Page was made and designed by Maciej Wojtkowiak, 2021. Do not copy it without constent of the author.</h4>
+            
+            <div class="footer__social-media">
+                <h2 class="footer__header">Visit us</h2>
+                <div class="footer__social-media__icon-box">
+                    <svg viewBox="0 0 100 100" class="footer__social-media--icon">
+                        <use xlink:href="svg/sprite.svg#icon-facebook"></use>
+                    </svg>
+                    <svg viewBox="0 0 100 100" class="footer__social-media--icon">
+                        <use xlink:href="svg/sprite.svg#icon-instagram"></use>
+                    </svg>
+                    <svg viewBox="0 0 100 100" class="footer__social-media--icon">
+                        <use xlink:href="svg/sprite.svg#icon-twitter"></use>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="footer__info">
+                <p>About</p>
+                <p>Products</p>
+                <p>Pricing</p>
+                <p>Privacy policy</p>
+                <p>Contact</p>
+            </div>
         </footer>
        
 

@@ -35,7 +35,6 @@
         @include flexCenter;
         font-size: 2rem;
         letter-spacing: .2rem;
-        color: $light--brown;
         justify-self: center end ;
         align-self: center end;
         margin-left: auto;
@@ -44,6 +43,8 @@
 
     &__link {
        padding-right: 2rem;
+       text-decoration: none;
+       color: $light--brown;
 
         &:last-child {
             padding-right: 0;

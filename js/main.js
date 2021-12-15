@@ -38,7 +38,6 @@ class Champagne {
     _modalToggleClasses() {
         this.#modalOverlay.classList.toggle('hidden');
         this.#activeModal.classList.toggle('hidden');
-        document.body.classList.remove('overf')
     };
 
     _slider() {
@@ -103,7 +102,7 @@ class Champagne {
                 const navbar =  document.querySelector('.navbar');
                 const navHeight = navbar.getBoundingClientRect().height
                 sectionToScroll.scrollIntoView({behavior: 'smooth'})
-                // smooth scrolling, ignoring navbar which prevent it from overlapping section.
+                // smooth scrolling, ignoring navbar which prevents from overlapping section.
                 window.scrollTo({
                     top: sectionCord.top + window.pageYOffset - navHeight,
                     left: sectionCord.left + window.pageXOffset,
@@ -118,19 +117,7 @@ class Champagne {
 const champagne = new Champagne;
 
 
-/* old fashioned smooth scrolling
-const anchor = document.querySelector('.anchor');
-anchor.addEventListener('click', (e) => {
-    const section1 = document.querySelector('.section2');
-    const section1Cord = section1.getBoundingClientRect()
-    window.scrollTo({
-           top: section1Cord.top + window.pageYOffset,
-           left: section1Cord.left + window.pageXOffset,
-           behavior: 'smooth',
-         });
-})
 
-*/
 
 
 
