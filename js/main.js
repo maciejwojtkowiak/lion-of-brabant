@@ -38,7 +38,6 @@ class Champagne {
     _modalToggleClasses() {
         this.#modalOverlay.classList.toggle('hidden');
         this.#activeModal.classList.toggle('hidden');
-        document.body.classList.remove('overf')
     };
 
     _slider() {
