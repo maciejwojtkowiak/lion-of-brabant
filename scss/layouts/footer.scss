@@ -1,7 +1,7 @@
 @import '../abstracts/variables.scss';
 
 .footer {
-    height: 20vh;
+    height: 25vh;
     display: grid;
     place-items: center;
     background-color: transparent;
@@ -29,10 +29,17 @@
     &__info {
         display: flex;
         flex-direction: row;
+        border-bottom: 2px dotted $light--brown;
+        padding-bottom: 2rem;
         & > p {
             margin-right: 2rem;
             font-size: 1.8rem;
         }
+    }
+
+    &__author {
+        font-weight: 200;
+        font-size: 1.2rem;
     }
     
 }

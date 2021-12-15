@@ -423,7 +423,7 @@ ul, li {
 }
 
 .footer {
-  height: 20vh;
+  height: 25vh;
   display: grid;
   place-items: center;
   background-color: transparent;
@@ -450,10 +450,16 @@ ul, li {
 .footer__info {
   display: flex;
   flex-direction: row;
+  border-bottom: 2px dotted #886841;
+  padding-bottom: 2rem;
 }
 .footer__info > p {
   margin-right: 2rem;
   font-size: 1.8rem;
+}
+.footer__author {
+  font-weight: 200;
+  font-size: 1.2rem;
 }
 
 /* themes */
