@@ -43,26 +43,40 @@ class Champagne {
     _slider() {
         const buttonBack = document.querySelector('.slider__previous');
         const buttonForward = document.querySelector('.slider__next');
-        let currSlide = 0;
         const slideLength = this.#slides.length - 1
-        this.#slides.forEach((slide, i) => slide.style.transform = `translateX(${(i - currSlide) * 100}%)`);
 
+        let currSlide = 0;
+        this._moveToSlide(currSlide)
+
+         setInterval(() => {
+            currSlide = this._goToNextSlide(currSlide, slideLength)
+            this._moveToSlide(currSlide)
+        }, 15000)
+
+        
         buttonBack.addEventListener('click', (e) => {
-            currSlide--
-            currSlide = currSlide < 0 ? currSlide = slideLength : currSlide;
-            this._moveToSlide(currSlide);
-            
+            currSlide = this._goToPreviousSlide(currSlide, slideLength)
+            this._moveToSlide(currSlide);  
         });
 
         buttonForward.addEventListener('click', (e) => {
-            currSlide++
-            currSlide = currSlide > slideLength ? 0 : currSlide;
+            currSlide = this._goToNextSlide(currSlide, slideLength)
             this._moveToSlide(currSlide);
         });
     };
 
     _moveToSlide(slide) {
         this.#slides.forEach((sli, i) => sli.style.transform = `translateX(${(i - slide) * 100}%)`) ;
+    }
+
+    _goToNextSlide(slide, length) {
+        slide++
+        return slide = slide > length ? 0 : slide;
+    }
+
+    _goToPreviousSlide(slide, length) {
+        slide--
+        return slide = slide < 0 ? slide = length : slide;
     }
 
     _fixedNavbar() {
