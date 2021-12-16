@@ -24,12 +24,20 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.hidden {
-  display: none;
-}
-
 ul, li {
   list-style-position: inside;
+}
+
+textarea {
+  resize: none;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 @keyframes mainFadeIn {
@@ -46,7 +54,7 @@ ul, li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
+  z-index: 6;
 }
 .modal__card {
   display: flex;
@@ -73,9 +81,74 @@ ul, li {
 .modal__image--3 {
   background-image: url("../../images/recipe.jpg");
 }
+.modal__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: #886841 0.5rem solid;
+  border-radius: 10rem;
+  height: 80%;
+  width: 65%;
+}
+.modal__form__input {
+  margin: 1.5rem 0;
+  color: white;
+  width: 50%;
+  border: #886841 0.4rem solid;
+  outline: none;
+  background-color: transparent;
+  border-radius: 5rem;
+  padding: 1rem;
+}
+.modal__form__text {
+  padding: 1rem;
+  background-color: transparent;
+  border: #886841 0.4rem solid;
+  outline: none;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+.modal__form__button {
+  margin-bottom: 1.5rem;
+  padding: 2rem 1rem;
+  text-decoration: none;
+  background-color: #886841;
+  font-size: 2.5rem;
+  border-radius: 10rem;
+  color: white;
+  transition: all 0.3s;
+}
+.modal__form__button:active {
+  transform: translateY(-6px);
+}
 .modal__description {
   background-color: rgba(0, 0, 0, 0.897);
   flex: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+.modal__description__header {
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 5rem;
+}
+.modal__description__content {
+  color: white;
+}
+
+.modal-button {
+  font-size: 1.6rem;
+  color: white;
+  margin-top: 2rem;
+  border: none;
+  background-color: #886841;
+  padding: 1rem 2.5rem 1rem 2.5rem;
+  border-radius: 5rem;
+  font-weight: 700;
 }
 
 .overlay {
@@ -87,7 +160,7 @@ ul, li {
   backdrop-filter: blur(15px);
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 5;
 }
 .overlay__close-button {
   position: fixed;
@@ -151,7 +224,7 @@ ul, li {
   height: 7vh;
   width: 100%;
   background-color: black;
-  z-index: 1;
+  z-index: 4;
   transition: all 0.5s;
   padding: 2rem 0;
   border-bottom: 0.2rem solid #886841;
@@ -207,7 +280,7 @@ ul, li {
   height: 7vh;
   width: 100%;
   background-color: black;
-  z-index: 1;
+  z-index: 4;
   transition: all 0.5s;
   padding: 2rem 0;
   border-bottom: 0.2rem solid #886841;
@@ -309,16 +382,6 @@ ul, li {
   width: 10rem;
   height: 10rem;
 }
-.card__modal-button {
-  font-size: 1.6rem;
-  color: white;
-  margin-top: 2rem;
-  border: none;
-  background-color: #886841;
-  padding: 1rem 2.5rem 1rem 2.5rem;
-  border-radius: 5rem;
-  font-weight: 700;
-}
 
 .gif {
   display: flex;
@@ -357,7 +420,7 @@ ul, li {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  z-index: 10;
+  z-index: 3;
   border: none;
   color: #886841;
   font-size: 5rem;
@@ -369,7 +432,7 @@ ul, li {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  z-index: 10;
+  z-index: 3;
   border: none;
   color: #886841;
   font-size: 5rem;
@@ -422,8 +485,40 @@ ul, li {
   font-size: 12rem;
 }
 
+.contact {
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 0.2rem solid #886841;
+  background-color: #886841;
+}
+.contact__header {
+  font-size: 5rem;
+  color: white;
+}
+.contact__button {
+  margin-top: 3rem;
+  padding: 2rem 8rem;
+  border: none;
+  border-radius: 10rem;
+  background-color: black;
+  color: white;
+  transition: all 0.3s;
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.contact__button:hover {
+  transform: translateY(-5px);
+}
+.contact__button:active {
+  transform: translateY(-8px);
+}
+
 .footer {
-  height: 20vh;
+  height: 25vh;
   display: grid;
   place-items: center;
   background-color: transparent;
@@ -450,10 +545,16 @@ ul, li {
 .footer__info {
   display: flex;
   flex-direction: row;
+  border-bottom: 2px dotted #886841;
+  padding-bottom: 2rem;
 }
 .footer__info > p {
   margin-right: 2rem;
   font-size: 1.8rem;
+}
+.footer__author {
+  font-weight: 200;
+  font-size: 1.2rem;
 }
 
 /* themes */

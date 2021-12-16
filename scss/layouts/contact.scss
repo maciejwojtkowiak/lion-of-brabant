@@ -1,0 +1,36 @@
+@import '../abstracts/mixins.scss';
+@import '../abstracts/variables.scss';
+
+
+.contact {
+    height: 45vh;
+    @include flexCenter;
+    flex-direction: column;
+    @include borderBottomPrimary;
+    background-color: $light--brown;
+
+    &__header {
+        font-size: 5rem;
+        color: white;
+    }
+
+    &__button {
+        margin-top: 3rem;
+        padding: 2rem 8rem;
+        border: none;
+        border-radius: 10rem;
+        background-color: black;
+        color: white;
+        transition: all .3s;
+        font-size: 3rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        
+        &:hover {
+            transform: translateY(-5px);
+        }
+        &:active {
+            transform: translateY(-8px);
+        }
+    }
+}

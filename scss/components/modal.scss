@@ -5,7 +5,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    z-index: 6;
 
     &__card {
         display: flex;
@@ -35,12 +35,79 @@
         }
     }
 
+    &__form {
+        @include flexCenter;
+        flex-direction: column;
+        border: $light--brown .5rem solid;
+        border-radius: 10rem;
+        height: 80%;
+        width: 65%;
+        &__input {
+            margin: 1.5rem 0;
+            color: white;
+            width: 50%;
+            border: $light--brown .4rem solid;
+            outline: none;
+            background-color: transparent;
+            border-radius: 5rem;
+            padding: 1rem;
+        }
+
+        &__text {
+            padding: 1rem;
+            background-color: transparent;
+            border: $light--brown .4rem solid;
+            outline: none;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        &__button {
+            margin-bottom: 1.5rem;
+            padding: 2rem 1rem;
+            text-decoration: none;
+            background-color: $light--brown;
+            font-size: 2.5rem;
+            border-radius: 10rem;
+            color: white;
+            transition: all .3s;
+
+            &:active {
+                transform: translateY(-6px);
+            }
+        }
+    }
+
     &__description {
         background-color: rgba(0, 0, 0, 0.897);
         flex: 5;
+        @include flexCenter;
+        flex-direction: column;
+        color: white;
+
+        &__header {
+            color: white;
+            margin-bottom: 2rem;
+            font-size: 5rem;
+        }
+
+        &__content {
+            color: white;
+        }
     }
     
 
+}
+
+.modal-button {
+    font-size: 1.6rem;
+    color: white;
+    margin-top: 2rem;
+    border: none;
+    background-color: $light--brown;
+    padding: 1rem 2.5rem 1rem 2.5rem;
+    border-radius: 5rem;
+    font-weight: 700;
 }
 
 .overlay {
@@ -52,7 +119,7 @@
     backdrop-filter: blur(15px);
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 5;
 
     &__close-button {
         position: fixed;

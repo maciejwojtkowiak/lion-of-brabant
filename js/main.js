@@ -1,11 +1,12 @@
 'use strict'
 
 class Champagne {
-    #modalButtons = document.querySelectorAll('.card__modal-button');
+    #modalButtons = document.querySelectorAll('.modal-button');
     #modalOverlay = document.querySelector('.overlay');
     #slides = document.querySelectorAll('.slide');
     #activeModal;
     constructor() {
+        this._fadeLink();
         this._showModal();
         this._hideModal();
         this._slider();
@@ -14,24 +15,38 @@ class Champagne {
        
     }
 
+    _fadeLink() {
+        const navbar = document.querySelector('.navbar');
+        navbar.addEventListener('click', (e) => {
+            console.log('Hello')
+        })
+    };
+
     _showModal() {
         this.#modalButtons.forEach(but => but.addEventListener('click', (e) => {
-            const clicked = e.target.closest('.card__modal-button');
+            const clicked = e.target.closest('.modal-button');
             if (!clicked) return;
             this.#activeModal = document.querySelector(`.modal--${clicked.dataset.but}`);
             this._modalToggleClasses();
-            document.body.style.overflow = "hidden"
+            document.body.style.overflow = "hidden";
             
         }));
     };
 
     _hideModal() {
+        const overlay = document.querySelector('.overlay')
         this.#modalOverlay.addEventListener('click', (e) => {
            if(e.target.closest('.overlay')) {
             this._modalToggleClasses();
-            document.body.style.overflow = "visible"
+            document.body.style.overflow = "visible";
             
            };
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!overlay.classList.contains('hidden') && e.key === "Escape")
+                this._modalToggleClasses();
+                document.body.style.overflow = "visible";
         });
     };
 
@@ -43,26 +58,40 @@ class Champagne {
     _slider() {
         const buttonBack = document.querySelector('.slider__previous');
         const buttonForward = document.querySelector('.slider__next');
-        let currSlide = 0;
         const slideLength = this.#slides.length - 1
-        this.#slides.forEach((slide, i) => slide.style.transform = `translateX(${(i - currSlide) * 100}%)`);
 
-        buttonBack.addEventListener('click', (e) => {
-            currSlide--
-            currSlide = currSlide < 0 ? currSlide = slideLength : currSlide;
+        let currSlide = 0;
+        this._moveToSlide(currSlide)
+
+        setInterval(() => {
+            currSlide = this._goToNextSlide(currSlide, slideLength);
             this._moveToSlide(currSlide);
-            
+        }, 15000)
+
+        
+        buttonBack.addEventListener('click', (e) => {
+            currSlide = this._goToPreviousSlide(currSlide, slideLength);
+            this._moveToSlide(currSlide);  
         });
 
         buttonForward.addEventListener('click', (e) => {
-            currSlide++
-            currSlide = currSlide > slideLength ? 0 : currSlide;
+            currSlide = this._goToNextSlide(currSlide, slideLength);
             this._moveToSlide(currSlide);
         });
     };
 
     _moveToSlide(slide) {
         this.#slides.forEach((sli, i) => sli.style.transform = `translateX(${(i - slide) * 100}%)`) ;
+    }
+
+    _goToNextSlide(slide, length) {
+        slide++;
+        return slide = slide > length ? 0 : slide;
+    }
+
+    _goToPreviousSlide(slide, length) {
+        slide--;
+        return slide = slide < 0 ? slide = length : slide;
     }
 
     _fixedNavbar() {
@@ -98,10 +127,10 @@ class Champagne {
                 e.preventDefault()
                 const anchorLink = but.getAttribute('href');
                 const sectionToScroll = document.querySelector(anchorLink);
-                const sectionCord = sectionToScroll.getBoundingClientRect()
+                const sectionCord = sectionToScroll.getBoundingClientRect();
                 const navbar =  document.querySelector('.navbar');
-                const navHeight = navbar.getBoundingClientRect().height
-                sectionToScroll.scrollIntoView({behavior: 'smooth'})
+                const navHeight = navbar.getBoundingClientRect().height;
+                sectionToScroll.scrollIntoView({behavior: 'smooth'});
                 // smooth scrolling, ignoring navbar which prevents from overlapping section.
                 window.scrollTo({
                     top: sectionCord.top + window.pageYOffset - navHeight,
