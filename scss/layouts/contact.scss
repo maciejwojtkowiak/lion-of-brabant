@@ -17,13 +17,14 @@
     &__button {
         margin-top: 3rem;
         padding: 2rem 8rem;
-        font-size: 3rem;
-        font-weight: 200;
         border: none;
         border-radius: 10rem;
         background-color: black;
         color: white;
         transition: all .3s;
+        font-size: 3rem;
+        font-weight: 800;
+        text-transform: uppercase;
         
         &:hover {
             transform: translateY(-5px);
