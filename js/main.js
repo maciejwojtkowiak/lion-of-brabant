@@ -48,7 +48,7 @@ class Champagne {
         let currSlide = 0;
         this._moveToSlide(currSlide)
 
-         setInterval(() => {
+        setInterval(() => {
             currSlide = this._goToNextSlide(currSlide, slideLength)
             this._moveToSlide(currSlide)
         }, 15000)

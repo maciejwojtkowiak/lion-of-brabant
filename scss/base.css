@@ -151,7 +151,7 @@ ul, li {
   height: 7vh;
   width: 100%;
   background-color: black;
-  z-index: 1;
+  z-index: 20;
   transition: all 0.5s;
   padding: 2rem 0;
   border-bottom: 0.2rem solid #886841;
@@ -207,7 +207,7 @@ ul, li {
   height: 7vh;
   width: 100%;
   background-color: black;
-  z-index: 1;
+  z-index: 20;
   transition: all 0.5s;
   padding: 2rem 0;
   border-bottom: 0.2rem solid #886841;
@@ -357,7 +357,7 @@ ul, li {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  z-index: 10;
+  z-index: 5;
   border: none;
   color: #886841;
   font-size: 5rem;
@@ -369,7 +369,7 @@ ul, li {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  z-index: 10;
+  z-index: 5;
   border: none;
   color: #886841;
   font-size: 5rem;
@@ -420,6 +420,37 @@ ul, li {
   opacity: 0.8;
   font-family: "Secular One", serif;
   font-size: 12rem;
+}
+
+.contact {
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 0.2rem solid #886841;
+  background-color: #886841;
+}
+.contact__header {
+  font-size: 5rem;
+  color: white;
+}
+.contact__button {
+  margin-top: 3rem;
+  padding: 2rem 8rem;
+  font-size: 3rem;
+  font-weight: 200;
+  border: none;
+  border-radius: 10rem;
+  background-color: black;
+  color: white;
+  transition: all 0.3s;
+}
+.contact__button:hover {
+  transform: translateY(-5px);
+}
+.contact__button:active {
+  transform: translateY(-8px);
 }
 
 .footer {
