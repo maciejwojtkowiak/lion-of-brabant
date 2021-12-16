@@ -40,9 +40,9 @@
         width: 40vw;
         height: 60%;
         @include boxBorder;
+        @include flexCenter;
         color: white;
         position: absolute;
-        @include flexCenter;
         flex-direction: column;
         gap: 6rem;
         padding: 0 10rem;
