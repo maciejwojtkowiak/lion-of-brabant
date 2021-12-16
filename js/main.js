@@ -4,9 +4,11 @@ class Champagne {
     #modalButtons = document.querySelectorAll('.modal-button');
     #modalOverlay = document.querySelector('.overlay');
     #slides = document.querySelectorAll('.slide');
+    #navbar = document.querySelector('.navbar')
     #activeModal;
     constructor() {
-        this._fadeLink();
+        this.#navbar.addEventListener('mouseover', (e) => this._fadeLink(e, 0.5))
+        this.#navbar.addEventListener('mouseout', (e) => this._fadeLink(e, 1))
         this._showModal();
         this._hideModal();
         this._slider();
@@ -15,20 +17,17 @@ class Champagne {
        
     }
 
-    _fadeLink() {
-        const navbar = document.querySelector('.navbar');
-        navbar.addEventListener('mouseover', (e) => {
-            console.log('click')
+    _fadeLink(e, opacity) {
             if (e.target.classList.contains('navbar__link')) {
                 const link = e.target;
                 console.log(link)
                 if (!link) return;
-                const siblings = link.closest('.navbar').querySelectorAll('.navbar__link');
-                siblings.forEach(sib => sib.style.opacity = "0.5")
-                link.style.opacity = "1"
+                const siblings = link.closest('.navbar').querySelectorAll('.navbar__link')
                 console.log(siblings)
+                siblings.forEach(sib => sib.style.opacity = opacity)
+                link.style.opacity = "1"
+                
             };
-        });
     };
 
     _showModal() {
@@ -110,7 +109,9 @@ class Champagne {
     
         const callback = function(entries, observer) {
             const [entry] = entries;
+            console.log(entry)
             if (!entry.isIntersecting) {
+                console.log('ser');
                 navbar.classList.add('sticky');
             } else {
                 navbar.classList.remove('sticky') ;

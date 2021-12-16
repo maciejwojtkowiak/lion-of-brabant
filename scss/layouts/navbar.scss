@@ -45,6 +45,7 @@
        padding-right: 2rem;
        text-decoration: none;
        color: $light--brown;
+       transition: all .5s;
 
         &:last-child {
             padding-right: 0;

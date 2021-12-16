@@ -257,6 +257,7 @@ a, button {
   padding-right: 2rem;
   text-decoration: none;
   color: #886841;
+  transition: all 0.5s;
 }
 .navbar__link:last-child {
   padding-right: 0;
@@ -313,6 +314,7 @@ a, button {
   padding-right: 2rem;
   text-decoration: none;
   color: #886841;
+  transition: all 0.5s;
 }
 .navbar__link:last-child {
   padding-right: 0;
