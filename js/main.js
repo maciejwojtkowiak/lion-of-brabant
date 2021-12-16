@@ -17,9 +17,18 @@ class Champagne {
 
     _fadeLink() {
         const navbar = document.querySelector('.navbar');
-        navbar.addEventListener('click', (e) => {
-            console.log('Hello')
-        })
+        navbar.addEventListener('mouseover', (e) => {
+            console.log('click')
+            if (e.target.classList.contains('navbar__link')) {
+                const link = e.target;
+                console.log(link)
+                if (!link) return;
+                const siblings = link.closest('.navbar').querySelectorAll('.navbar__link');
+                siblings.forEach(sib => sib.style.opacity = "0.5")
+                link.style.opacity = "1"
+                console.log(siblings)
+            };
+        });
     };
 
     _showModal() {
@@ -101,9 +110,7 @@ class Champagne {
     
         const callback = function(entries, observer) {
             const [entry] = entries;
-            console.log(entry)
             if (!entry.isIntersecting) {
-                console.log('ser');
                 navbar.classList.add('sticky');
             } else {
                 navbar.classList.remove('sticky') ;
