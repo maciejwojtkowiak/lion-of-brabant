@@ -2,7 +2,11 @@
     display: none;
 }
 
+.section {
+    transition: transform .7s, opacity .7s;
+}
+
 .hidden-section {
-    display: none;
+    opacity: 0;
     transform: translateY(7rem);
 }

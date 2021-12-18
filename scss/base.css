@@ -36,10 +36,6 @@ a, button {
   cursor: pointer;
 }
 
-.hidden {
-  display: none;
-}
-
 @keyframes mainFadeIn {
   0% {
     opacity: 0;
@@ -271,7 +267,20 @@ a, button {
   height: 100vh;
 }
 
-/* custom-partials */
+/* utilities */
+.hidden {
+  display: none;
+}
+
+.section {
+  transition: transform 1s, opacity 1s;
+}
+
+.hidden-section {
+  opacity: 0;
+  transform: translateY(7rem);
+}
+
 /* layouts */
 .navbar {
   display: grid;

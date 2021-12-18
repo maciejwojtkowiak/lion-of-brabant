@@ -154,22 +154,26 @@ class Champagne {
         const sections = document.querySelectorAll('.section');
         const options = {
             root: null,
-            threshold: 0.15,
+            threshold: 0.8,
             rootMargin: "0px",
         }
 
-        const showSection = ((entries) => {
+        const showSection = ((entries, observer) => {
             const [entry] = entries;
-            if (!entry.isIntersecting) {
-                entry.style.color = "red"
-                console.log('intersecting')
-            }
+            if (!entry.isIntersecting) return 
+            console.log(entry.target)
+            entry.target.classList.toggle('hidden-section')
+            observer.unobserve(entry.target)
+            
         })
 
         const sectionFadeIn = new IntersectionObserver(showSection, options);
         console.log(sections);
 
-        sections.forEach(sec => sectionFadeIn.observe(sec))
+        sections.forEach(sec => {
+            sec.classList.add('hidden-section')
+            sectionFadeIn.observe(sec)
+        } )
     }
     
 };
