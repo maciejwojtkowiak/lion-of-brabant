@@ -178,17 +178,16 @@ class Champagne {
 
     _specialOffer() {
         const specialOfferContainer = document.querySelector('.special__offer')
+        const timer = document.querySelector('.special__offer__timer')
         let time = 5
 
         setInterval(() => {
             // time in seconds
-            
-
             if (time >= 0) {
                 --time 
                 let minutes = String(Math.trunc(time / 60)).padStart(2, 0);
                 let seconds = String((time % 60)).padStart(2, 0);
-                specialOfferContainer.textContent = `${minutes}: ${seconds}`
+                timer.textContent =  `${minutes}: ${seconds}`
             }
             time = time <= 0 ? 130 : time
             
