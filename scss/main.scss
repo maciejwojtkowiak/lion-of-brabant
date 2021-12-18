@@ -11,7 +11,9 @@
 @import 'components/scrollbar.scss';
 @import 'components/stickyNav.scss';
 
-/* custom-partials */ 
+/* utilities */ 
+@import 'utilities/helper.scss';
+
 
 /* layouts */
 @import 'layouts/navbar.scss';
