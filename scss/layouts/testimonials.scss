@@ -55,10 +55,20 @@
         }
 
         &__user {
-            width: 7rem;
-            height: 7rem;
-            border-radius: 50%;
+            &--image {
+                width: 7rem;
+                height: 7rem;
+                border-radius: 50%;
+                margin-bottom: 1.5rem;
+            }
+    
+            &--data {
+               font-size: 2rem;
+               font-family: "Oooh Baby", cursive;
+               letter-spacing: .1rem;
+            }
         }
+        
         &::before {
             content: '"';
             position: absolute;

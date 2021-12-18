@@ -15,6 +15,7 @@ class Champagne {
         this._fixedNavbar();
         this._smoothScroll();
         this._revealSection();
+        this._specialOffer();
        
     }
 
@@ -173,6 +174,28 @@ class Champagne {
             sec.classList.add('hidden-section')
             sectionFadeIn.observe(sec)
         } )
+    }
+
+    _specialOffer() {
+        const specialOfferContainer = document.querySelector('.special__offer')
+        let time = 5
+
+        setInterval(() => {
+            // time in seconds
+            
+
+            if (time >= 0) {
+                --time 
+                let minutes = String(Math.trunc(time / 60)).padStart(2, 0);
+                let seconds = String((time % 60)).padStart(2, 0);
+                specialOfferContainer.textContent = `${minutes}: ${seconds}`
+            }
+            time = time <= 0 ? 130 : time
+            
+            
+        }, 1000)
+        
+        
     }
     
 };
