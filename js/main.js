@@ -14,7 +14,7 @@ class Champagne {
         this._slider();
         this._fixedNavbar();
         this._smoothScroll();
-        this._lazyLoading();
+        this._revealSection();
        
     }
 
@@ -150,11 +150,11 @@ class Champagne {
         });
     };
 
-    _lazyLoading() {
+    _revealSection() {
         const sections = document.querySelectorAll('.section');
         const options = {
             root: null,
-            threshold: 0.8,
+            threshold: 0.15,
             rootMargin: "0px",
         }
 
@@ -168,7 +168,6 @@ class Champagne {
         })
 
         const sectionFadeIn = new IntersectionObserver(showSection, options);
-        console.log(sections);
 
         sections.forEach(sec => {
             sec.classList.add('hidden-section')

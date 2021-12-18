@@ -1,9 +1,10 @@
 .hidden {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .section {
-    transition: transform .7s, opacity .7s;
+    transition: transform 1s, opacity 1s;
 }
 
 .hidden-section {
