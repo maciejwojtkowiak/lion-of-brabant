@@ -20,7 +20,7 @@ class Champagne {
     }
 
     _fadeLink(e, opacity) {
-            if (e.target.classList.contains('navbar__link')) {
+            if (e.target.classList.contains('link')) {
                 const link = e.target;
                 console.log(link)
                 if (!link) return;
@@ -131,7 +131,7 @@ class Champagne {
     };
 
     _smoothScroll() {
-        const buttons = document.querySelectorAll('.navbar__link');
+        const buttons = document.querySelectorAll('.link');
         buttons.forEach(but => {
             but.addEventListener('click', (e) => {
                 e.preventDefault()
@@ -180,6 +180,9 @@ class Champagne {
         const specialOfferContainer = document.querySelector('.special__offer')
         const timer = document.querySelector('.special__offer__timer')
         let time = 5
+        let minutes = String(Math.trunc(time / 60)).padStart(2, 0);
+        let seconds = String((time % 60)).padStart(2, 0);
+        timer.textContent =  `${minutes}: ${seconds}`
 
         setInterval(() => {
             // time in seconds
@@ -187,7 +190,7 @@ class Champagne {
                 --time 
                 let minutes = String(Math.trunc(time / 60)).padStart(2, 0);
                 let seconds = String((time % 60)).padStart(2, 0);
-                timer.textContent =  `${minutes}: ${seconds}`
+                timer.textContent = `${minutes}: ${seconds}`
             }
             time = time <= 0 ? 130 : time
             

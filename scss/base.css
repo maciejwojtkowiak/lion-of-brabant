@@ -311,6 +311,10 @@ a, button {
 .special__offer__timer {
   font-size: 3rem;
 }
+.special__offer__link {
+  background-color: #886841;
+  color: white;
+}
 
 /* utilities */
 .hidden {
