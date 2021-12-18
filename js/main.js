@@ -14,6 +14,7 @@ class Champagne {
         this._slider();
         this._fixedNavbar();
         this._smoothScroll();
+        this._lazyLoading();
        
     }
 
@@ -107,7 +108,7 @@ class Champagne {
         const main = document.querySelector('.header');
         const navHeight = navbar.getBoundingClientRect().height;
     
-        const callback = function(entries, observer) {
+        const stickNavbar = function(entries, observer) {
             const [entry] = entries;
             console.log(entry)
             if (!entry.isIntersecting) {
@@ -117,7 +118,7 @@ class Champagne {
                 navbar.classList.remove('sticky') ;
             };
         };
-        let observer = new IntersectionObserver(callback,{
+        let observer = new IntersectionObserver(stickNavbar,{
             root: null,
             threshold: 0,
             rootMargin: `-${navHeight}px`,
@@ -148,6 +149,28 @@ class Champagne {
             })
         });
     };
+
+    _lazyLoading() {
+        const sections = document.querySelectorAll('.section');
+        const options = {
+            root: null,
+            threshold: 0.15,
+            rootMargin: "0px",
+        }
+
+        const showSection = ((entries) => {
+            const [entry] = entries;
+            if (!entry.isIntersecting) {
+                entry.style.color = "red"
+                console.log('intersecting')
+            }
+        })
+
+        const sectionFadeIn = new IntersectionObserver(showSection, options);
+        console.log(sections);
+
+        sections.forEach(sec => sectionFadeIn.observe(sec))
+    }
     
 };
 
