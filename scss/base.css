@@ -8,6 +8,11 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
+@media only screen and (max-width: 22.5em) {
+  html {
+    font-size: 30%;
+  }
+}
 
 * {
   margin: 0;
@@ -232,9 +237,8 @@ a, button {
 .navbar {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  height: 7vh;
-  width: 100%;
   place-items: center;
+  width: 100%;
   color: #886841;
   background-color: black;
   z-index: 4;
@@ -242,8 +246,14 @@ a, button {
   padding: 2rem 0;
   border-bottom: 0.2rem solid #886841;
 }
+@media only screen and (max-width: 22.5em) {
+  .navbar {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .navbar__logo {
-  height: inherit;
+  height: 8rem;
+  width: 8rem;
   letter-spacing: 1rem;
   margin-right: auto;
   margin-left: 2rem;
@@ -255,6 +265,11 @@ a, button {
   justify-self: center;
   align-self: center;
 }
+@media only screen and (max-width: 22.5em) {
+  .navbar__header {
+    display: none;
+  }
+}
 .navbar__links {
   display: flex;
   justify-content: center;
@@ -265,6 +280,11 @@ a, button {
   align-self: center end;
   margin-left: auto;
   margin-right: 2rem;
+}
+@media only screen and (max-width: 22.5em) {
+  .navbar__links {
+    margin: 0;
+  }
 }
 .navbar__link {
   padding-right: 2rem;
@@ -380,9 +400,8 @@ a, button {
 .navbar {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  height: 7vh;
-  width: 100%;
   place-items: center;
+  width: 100%;
   color: #886841;
   background-color: black;
   z-index: 4;
@@ -390,8 +409,14 @@ a, button {
   padding: 2rem 0;
   border-bottom: 0.2rem solid #886841;
 }
+@media only screen and (max-width: 22.5em) {
+  .navbar {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .navbar__logo {
-  height: inherit;
+  height: 8rem;
+  width: 8rem;
   letter-spacing: 1rem;
   margin-right: auto;
   margin-left: 2rem;
@@ -403,6 +428,11 @@ a, button {
   justify-self: center;
   align-self: center;
 }
+@media only screen and (max-width: 22.5em) {
+  .navbar__header {
+    display: none;
+  }
+}
 .navbar__links {
   display: flex;
   justify-content: center;
@@ -413,6 +443,11 @@ a, button {
   align-self: center end;
   margin-left: auto;
   margin-right: 2rem;
+}
+@media only screen and (max-width: 22.5em) {
+  .navbar__links {
+    margin: 0;
+  }
 }
 .navbar__link {
   padding-right: 2rem;
@@ -464,6 +499,13 @@ a, button {
   place-items: center;
   position: relative;
 }
+@media only screen and (max-width: 22.5em) {
+  .features {
+    grid-template-columns: 1fr;
+    padding: 0;
+    width: 100%;
+  }
+}
 
 .card {
   display: grid;
@@ -477,6 +519,13 @@ a, button {
   padding: 5rem 3rem 5rem 3rem;
   height: 40vh;
   width: 20vw;
+}
+@media only screen and (max-width: 22.5em) {
+  .card {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+  }
 }
 .card__header {
   font-size: 7rem;

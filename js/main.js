@@ -250,7 +250,7 @@ class Champagne {
             if (!entry.isIntersecting) return;
             console.log(entry.target)
             specialOffer.classList.add('hidden')
-            console.log('HELLo')
+            observer.unobserve(entry.target)
 
         }
         const observer = new IntersectionObserver(hideOffer, options)
