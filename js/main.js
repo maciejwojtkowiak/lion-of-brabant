@@ -19,7 +19,8 @@ class Champagne {
         this._revealSection();
         this._specialOfferTimer();
         this._createDots();
-        this._activateDots();
+        this._dotOnClick();
+        this._activateDots(0);
         
        
     }
@@ -75,26 +76,31 @@ class Champagne {
 
         let currSlide = 0;
         this._moveToSlide(currSlide)
+        this._activateDots(currSlide)
 
         setInterval(() => {
             currSlide = this._goToNextSlide(currSlide, slideLength);
             this._moveToSlide(currSlide);
+            this._activateDots(currSlide)
         }, 15000)
 
         
         buttonBack.addEventListener('click', (e) => {
             currSlide = this._goToPreviousSlide(currSlide, slideLength);
-            this._moveToSlide(currSlide);  
+            this._moveToSlide(currSlide); 
+            this._activateDots(currSlide)
         });
 
         buttonForward.addEventListener('click', (e) => {
             currSlide = this._goToNextSlide(currSlide, slideLength);
             this._moveToSlide(currSlide);
+            this._activateDots(currSlide)
         });
     };
 
     _moveToSlide(slide) {
         this.#slides.forEach((sli, i) => sli.style.transform = `translateX(${(i - slide) * 100}%)`) ;
+        
     }
 
     _goToNextSlide(slide, length) {
@@ -209,15 +215,21 @@ class Champagne {
         })
     }
 
-    _activateDots() {
+    _dotOnClick(curSlide) {
         const dotsContainer = document.querySelector('.slider__dots')
         dotsContainer.addEventListener('click', (e) => {
             if (e.target.classList.contains('slider__dot')) {
                const activeDot = e.target;
+               this._moveToSlide(activeDot.dataset.dot)
                const siblings = activeDot.closest('.slider__dots').querySelectorAll('.slider__dot');
-               siblings.forEach(sib => sib = sib !== activeDot ?  sib.classList.remove('slider__dot--active') : activeDot.classList.add('slider__dot--active') )
+               siblings.forEach(sib => sib = sib !== activeDot ?  sib.classList.remove('slider__dot--active') : activeDot.classList.add('slider__dot--active'))
             }
         })
+    }
+    
+    _activateDots(curSlide) {
+        const dots = document.querySelectorAll('.slider__dot')
+        dots.forEach(dot => dot = Number(dot.dataset.dot) === Number(curSlide) ? dot.classList.add('slider__dot--active') :  dot.classList.remove('slider__dot--active')  )
     }
     
 };
