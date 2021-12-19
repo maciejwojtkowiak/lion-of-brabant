@@ -553,6 +553,7 @@ a, button {
   left: 50%;
   transform: translate(-50%, 0);
   display: inline-block;
+  z-index: 3;
 }
 .slider__dot {
   width: 1rem;
@@ -561,6 +562,7 @@ a, button {
   border-radius: 50%;
   border: none;
   background-color: #886841;
+  cursor: pointer;
 }
 .slider__dot--active {
   background-color: white;

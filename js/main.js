@@ -19,6 +19,7 @@ class Champagne {
         this._revealSection();
         this._specialOfferTimer();
         this._createDots();
+        this._activateDots();
         
        
     }
@@ -209,8 +210,14 @@ class Champagne {
     }
 
     _activateDots() {
-        const dots = document.querySelectorAll('.slider__dot')
-        dots.forEach(dot => console.log(dot.dataset.dot))
+        const dotsContainer = document.querySelector('.slider__dots')
+        dotsContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('slider__dot')) {
+               const activeDot = e.target;
+               const siblings = activeDot.closest('.slider__dots').querySelectorAll('.slider__dot');
+               siblings.forEach(sib => sib = sib !== activeDot ?  sib.classList.remove('slider__dot--active') : activeDot.classList.add('slider__dot--active') )
+            }
+        })
     }
     
 };
