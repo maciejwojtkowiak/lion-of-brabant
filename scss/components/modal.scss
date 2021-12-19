@@ -6,7 +6,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 6;
-    transition: all .2s;
+    transition: all .3s;
 
     &__card {
         display: flex;
@@ -36,13 +36,14 @@
         }
     }
 
-    &__form {
+    &__contact-form {
         @include flexCenter;
         flex-direction: column;
         border: $light--brown .5rem solid;
         border-radius: 10rem;
-        height: 80%;
+        height: 75%;
         width: 65%;
+        
         &__input {
             margin: 1.5rem 0;
             color: white;
@@ -65,13 +66,13 @@
 
         &__button {
             margin-bottom: 1.5rem;
-            padding: 2rem 1rem;
+            padding: 1.5rem 1rem;
             text-decoration: none;
             background-color: $light--brown;
             font-size: 2.5rem;
             border-radius: 10rem;
             color: white;
-            transition: all .2s;
+            
 
             &:active {
                 transform: translateY(-6px);
@@ -80,20 +81,28 @@
     }
 
     &__description {
-        background-color: rgba(0, 0, 0, 0.897);
+        display: flex;
         flex: 5;
-        @include flexCenter;
         flex-direction: column;
         color: white;
+        background-color: rgba(0, 0, 0, 0.897);
+        text-align: center;
+        @include flexCenter;
 
         &__header {
             color: white;
-            margin-bottom: 2rem;
-            font-size: 5rem;
+            font-size: 7rem;
+            font-weight: 800;
+            justify-self: flex-start;
+            align-self: center;
+            font-family: "Dancing Script", cursive;
+            padding-bottom: 2rem;
         }
 
         &__content {
             color: white;
+            font-size: 1.8rem;
+            padding: 6rem 10rem;
         }
     }
     
@@ -109,6 +118,14 @@
     padding: 1rem 2.5rem 1rem 2.5rem;
     border-radius: 5rem;
     font-weight: 700;
+    transition: all .5s;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+    &:active {
+        transform: translateY(-10px);
+    }
 }
 
 .overlay {
@@ -121,7 +138,7 @@
     top: 0;
     left: 0;
     z-index: 5;
-    transition: all 1s;
+    transition: all .3s;
     
 
     &__close-button {
@@ -144,13 +161,17 @@
         &--sign-inner{
         
             &::after {
-            @include modalCloseButton;
+            @include closeButton;
             transform: rotate(-45deg);
+            left: 0;
+            top: 50%;
         }
         
-        &::before {
-            @include modalCloseButton;
-            transform: rotate(45deg);
+            &::before {
+                @include closeButton;
+                transform: rotate(45deg);
+                left: 0;
+                top: 50%;
         }
       }
     }

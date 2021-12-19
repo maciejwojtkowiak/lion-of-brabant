@@ -1,12 +1,12 @@
 @import '../abstracts/mixins.scss';
 @import '../abstracts/variables.scss';
+@import '../abstracts/breakpoints.scss';
 
 .navbar {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 7vh;
-    width: 100%;
     place-items: center;
+    width: 100%;
     color: $light--brown;
     background-color: black;
     z-index: 4;
@@ -14,8 +14,13 @@
     padding: 2rem 0;
     @include borderBottomPrimary;
 
+    @media only screen and (max-width: $small) {
+        grid-template-columns: 1fr 1fr;
+    }
+
     &__logo {
-        height: inherit;
+        height: 8rem;
+        width: 8rem;
         letter-spacing: 1rem;
         margin-right: auto;
         margin-left: 2rem;
@@ -28,6 +33,9 @@
         letter-spacing: .7rem;
         justify-self: center;
         align-self: center;
+        @media only screen and (max-width: $small) {
+            display: none;
+        }
         
     }
 
@@ -39,11 +47,14 @@
         align-self: center end;
         margin-left: auto;
         margin-right: 2rem;
+
+        @media only screen and (max-width: $small) {
+            margin: 0;
+        }
     }
 
     &__link {
        padding-right: 2rem;
-       text-decoration: none;
        color: $light--brown;
        transition: all .5s;
 

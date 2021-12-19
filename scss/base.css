@@ -3,9 +3,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap");
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+}
+@media only screen and (max-width: 22.5em) {
+  html {
+    font-size: 30%;
+  }
 }
 
 * {
@@ -51,7 +57,7 @@ a, button {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 6;
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 .modal__card {
   display: flex;
@@ -78,17 +84,17 @@ a, button {
 .modal__image--3 {
   background-image: url("../../images/recipe.jpg");
 }
-.modal__form {
+.modal__contact-form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border: #886841 0.5rem solid;
   border-radius: 10rem;
-  height: 80%;
+  height: 75%;
   width: 65%;
 }
-.modal__form__input {
+.modal__contact-form__input {
   margin: 1.5rem 0;
   color: white;
   width: 50%;
@@ -98,7 +104,7 @@ a, button {
   border-radius: 5rem;
   padding: 1rem;
 }
-.modal__form__text {
+.modal__contact-form__text {
   padding: 1rem;
   background-color: transparent;
   border: #886841 0.4rem solid;
@@ -106,35 +112,42 @@ a, button {
   margin-bottom: 1.5rem;
   color: white;
 }
-.modal__form__button {
+.modal__contact-form__button {
   margin-bottom: 1.5rem;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   text-decoration: none;
   background-color: #886841;
   font-size: 2.5rem;
   border-radius: 10rem;
   color: white;
-  transition: all 0.2s;
 }
-.modal__form__button:active {
+.modal__contact-form__button:active {
   transform: translateY(-6px);
 }
 .modal__description {
-  background-color: rgba(0, 0, 0, 0.897);
+  display: flex;
   flex: 5;
+  flex-direction: column;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.897);
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  color: white;
 }
 .modal__description__header {
   color: white;
-  margin-bottom: 2rem;
-  font-size: 5rem;
+  font-size: 7rem;
+  font-weight: 800;
+  justify-self: flex-start;
+  align-self: center;
+  font-family: "Dancing Script", cursive;
+  padding-bottom: 2rem;
 }
 .modal__description__content {
   color: white;
+  font-size: 1.8rem;
+  padding: 6rem 10rem;
 }
 
 .modal-button {
@@ -146,6 +159,13 @@ a, button {
   padding: 1rem 2.5rem 1rem 2.5rem;
   border-radius: 5rem;
   font-weight: 700;
+  transition: all 0.5s;
+}
+.modal-button:hover {
+  transform: translateY(-5px);
+}
+.modal-button:active {
+  transform: translateY(-10px);
 }
 
 .overlay {
@@ -158,7 +178,7 @@ a, button {
   top: 0;
   left: 0;
   z-index: 5;
-  transition: all 1s;
+  transition: all 0.3s;
 }
 .overlay__close-button {
   position: fixed;
@@ -182,24 +202,24 @@ a, button {
   height: 0.5rem;
   width: 100%;
   position: absolute;
-  left: 0;
-  top: 50%;
   background-color: white;
   color: white;
   transform-origin: center;
   transform: rotate(-45deg);
+  left: 0;
+  top: 50%;
 }
 .overlay__close-button--sign-inner::before {
   content: "";
   height: 0.5rem;
   width: 100%;
   position: absolute;
-  left: 0;
-  top: 50%;
   background-color: white;
   color: white;
   transform-origin: center;
   transform: rotate(45deg);
+  left: 0;
+  top: 50%;
 }
 
 ::-webkit-scrollbar {
@@ -217,9 +237,8 @@ a, button {
 .navbar {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  height: 7vh;
-  width: 100%;
   place-items: center;
+  width: 100%;
   color: #886841;
   background-color: black;
   z-index: 4;
@@ -227,8 +246,14 @@ a, button {
   padding: 2rem 0;
   border-bottom: 0.2rem solid #886841;
 }
+@media only screen and (max-width: 22.5em) {
+  .navbar {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .navbar__logo {
-  height: inherit;
+  height: 8rem;
+  width: 8rem;
   letter-spacing: 1rem;
   margin-right: auto;
   margin-left: 2rem;
@@ -239,6 +264,11 @@ a, button {
   letter-spacing: 0.7rem;
   justify-self: center;
   align-self: center;
+}
+@media only screen and (max-width: 22.5em) {
+  .navbar__header {
+    display: none;
+  }
 }
 .navbar__links {
   display: flex;
@@ -251,9 +281,13 @@ a, button {
   margin-left: auto;
   margin-right: 2rem;
 }
+@media only screen and (max-width: 22.5em) {
+  .navbar__links {
+    margin: 0;
+  }
+}
 .navbar__link {
   padding-right: 2rem;
-  text-decoration: none;
   color: #886841;
   transition: all 0.5s;
 }
@@ -267,6 +301,80 @@ a, button {
 
 .header {
   height: 100vh;
+}
+
+.special__offer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  width: 50%;
+  height: 20%;
+  z-index: 10;
+  color: white;
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+  background-color: black;
+  transform: translate(-50%, 0);
+  border-top: #886841 2px solid;
+  border-right: #886841 2px solid;
+  border-left: #886841 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+.special__offer__close-button {
+  position: fixed;
+  top: 10%;
+  right: 6%;
+  border: none;
+}
+.special__offer__close-button--box {
+  width: 3rem;
+  height: 2rem;
+  position: fixed;
+}
+.special__offer__close-button--inner::before {
+  content: "";
+  height: 0.5rem;
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  color: white;
+  transform-origin: center;
+  transform: rotate(-45deg);
+  left: 0;
+  top: 50%;
+}
+.special__offer__close-button--inner::after {
+  content: "";
+  height: 0.5rem;
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  color: white;
+  transform-origin: center;
+  transform: rotate(45deg);
+  left: 0;
+  top: 50%;
+}
+.special__offer__header {
+  font-size: 5rem;
+  font-family: "Dancing Script", cursive;
+}
+.special__offer__timer {
+  font-size: 3rem;
+}
+.special__offer__link {
+  background-color: #886841;
+  color: white;
+  margin: 1rem 0;
+  padding: 1rem 3rem;
+  font-size: 2.2rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 /* utilities */
@@ -284,13 +392,16 @@ a, button {
   transform: translateY(7rem);
 }
 
+.link {
+  text-decoration: none;
+}
+
 /* layouts */
 .navbar {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  height: 7vh;
-  width: 100%;
   place-items: center;
+  width: 100%;
   color: #886841;
   background-color: black;
   z-index: 4;
@@ -298,8 +409,14 @@ a, button {
   padding: 2rem 0;
   border-bottom: 0.2rem solid #886841;
 }
+@media only screen and (max-width: 22.5em) {
+  .navbar {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .navbar__logo {
-  height: inherit;
+  height: 8rem;
+  width: 8rem;
   letter-spacing: 1rem;
   margin-right: auto;
   margin-left: 2rem;
@@ -310,6 +427,11 @@ a, button {
   letter-spacing: 0.7rem;
   justify-self: center;
   align-self: center;
+}
+@media only screen and (max-width: 22.5em) {
+  .navbar__header {
+    display: none;
+  }
 }
 .navbar__links {
   display: flex;
@@ -322,9 +444,13 @@ a, button {
   margin-left: auto;
   margin-right: 2rem;
 }
+@media only screen and (max-width: 22.5em) {
+  .navbar__links {
+    margin: 0;
+  }
+}
 .navbar__link {
   padding-right: 2rem;
-  text-decoration: none;
   color: #886841;
   transition: all 0.5s;
 }
@@ -373,6 +499,13 @@ a, button {
   place-items: center;
   position: relative;
 }
+@media only screen and (max-width: 22.5em) {
+  .features {
+    grid-template-columns: 1fr;
+    padding: 0;
+    width: 100%;
+  }
+}
 
 .card {
   display: grid;
@@ -386,6 +519,13 @@ a, button {
   padding: 5rem 3rem 5rem 3rem;
   height: 40vh;
   width: 20vw;
+}
+@media only screen and (max-width: 22.5em) {
+  .card {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+  }
 }
 .card__header {
   font-size: 7rem;
@@ -422,13 +562,14 @@ a, button {
   overflow: hidden;
   position: relative;
   display: grid;
-  place-items: stretch center;
+  place-items: center;
+  grid-template-rows: min-content;
   border-bottom: 0.2rem solid #886841;
 }
 .slider__header {
-  margin-top: 10rem;
   color: #886841;
   font-size: 3rem;
+  margin-top: 10rem;
 }
 .slider__previous {
   position: absolute;
@@ -453,6 +594,27 @@ a, button {
   display: inline-block;
   background-color: transparent;
   right: 5%;
+}
+.slider__dots {
+  padding: 0;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: inline-block;
+  z-index: 3;
+}
+.slider__dot {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 2rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #886841;
+  cursor: pointer;
+}
+.slider__dot--active {
+  background-color: white;
 }
 
 .slide {
@@ -483,10 +645,16 @@ a, button {
 .slide__card__opinion {
   font-size: 2rem;
 }
-.slide__card__user {
+.slide__card__user--image {
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
+  margin-bottom: 1.5rem;
+}
+.slide__card__user--data {
+  font-size: 2rem;
+  font-family: "Oooh Baby", cursive;
+  letter-spacing: 0.1rem;
 }
 .slide__card::before {
   content: '"';

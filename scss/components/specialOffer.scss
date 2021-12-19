@@ -1,0 +1,73 @@
+@import '../abstracts/variables.scss';
+@import '../abstracts/mixins.scss';
+
+.special__offer {   
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    width: 50%;
+    height: 20%;
+    z-index: 10;
+    color: white;
+    border-top-left-radius: 5rem;
+    border-top-right-radius: 5rem;
+    background-color: black;
+    transform: translate(-50%, 0);
+    border-top: $light--brown 2px solid;
+    border-right: $light--brown 2px solid;
+    border-left: $light--brown 2px solid;
+    @include flexCenter;
+    flex-direction: column;
+    transition: all .3s;
+
+   &__close-button {
+       position: fixed;
+       top: 10%;
+       right: 6%;
+       border: none;
+       &--box {
+         width: 3rem;
+         height: 2rem;
+         position: fixed;
+       }
+
+       &--inner {
+
+        &::before {
+            @include closeButton;
+            transform: rotate(-45deg);
+            left: 0;
+            top: 50%;
+        }
+
+        &::after {
+            @include closeButton;
+            transform: rotate(45deg);
+            left: 0;
+            top: 50%;
+        }
+       }
+   }
+
+   &__header {
+       font-size: 5rem;
+       font-family: 'Dancing Script', cursive;
+   }
+
+
+   &__timer {
+       font-size: 3rem;
+   }
+   
+   &__link {
+       background-color: $light--brown;
+       color:white;
+       margin: 1rem 0;
+       padding: 1rem 3rem;
+       font-size: 2.2rem;
+       border-radius: 2rem;
+       text-transform: uppercase;
+       font-weight: 900;
+   }
+
+}

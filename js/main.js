@@ -5,26 +5,34 @@ class Champagne {
     #modalOverlay = document.querySelector('.overlay');
     #slides = document.querySelectorAll('.slide');
     #navbar = document.querySelector('.navbar')
+    #specialOfferCloseButton = document.querySelector('.special__offer__close-button')
+    #specialOfferContactLink = document.querySelector('.special__offer__link')
     #activeModal;
     constructor() {
         this.#navbar.addEventListener('mouseover', (e) => this._fadeLink(e, 0.5))
         this.#navbar.addEventListener('mouseout', (e) => this._fadeLink(e, 1))
+        this.#specialOfferCloseButton.addEventListener('click', this._hideOffer)
+        this.#specialOfferContactLink.addEventListener('click', this._hideOffer)
         this._showModal();
         this._hideModal();
         this._slider();
         this._fixedNavbar();
         this._smoothScroll();
         this._revealSection();
+        this._specialOfferTimer();
+        this._createDots();
+        this._dotOnClick();
+        this._activateDots(0);
+        this._specialOfferCloseObserver();
+        
        
     }
 
     _fadeLink(e, opacity) {
-            if (e.target.classList.contains('navbar__link')) {
+            if (e.target.classList.contains('link')) {
                 const link = e.target;
-                console.log(link)
                 if (!link) return;
                 const siblings = link.closest('.navbar').querySelectorAll('.navbar__link')
-                console.log(siblings)
                 siblings.forEach(sib => sib.style.opacity = opacity)
                 link.style.opacity = "1"
                 
@@ -71,26 +79,31 @@ class Champagne {
 
         let currSlide = 0;
         this._moveToSlide(currSlide)
+        this._activateDots(currSlide)
 
         setInterval(() => {
             currSlide = this._goToNextSlide(currSlide, slideLength);
             this._moveToSlide(currSlide);
+            this._activateDots(currSlide)
         }, 15000)
 
         
         buttonBack.addEventListener('click', (e) => {
             currSlide = this._goToPreviousSlide(currSlide, slideLength);
-            this._moveToSlide(currSlide);  
+            this._moveToSlide(currSlide); 
+            this._activateDots(currSlide)
         });
 
         buttonForward.addEventListener('click', (e) => {
             currSlide = this._goToNextSlide(currSlide, slideLength);
             this._moveToSlide(currSlide);
+            this._activateDots(currSlide)
         });
     };
 
     _moveToSlide(slide) {
         this.#slides.forEach((sli, i) => sli.style.transform = `translateX(${(i - slide) * 100}%)`) ;
+        
     }
 
     _goToNextSlide(slide, length) {
@@ -110,9 +123,7 @@ class Champagne {
     
         const stickNavbar = function(entries, observer) {
             const [entry] = entries;
-            console.log(entry)
             if (!entry.isIntersecting) {
-                console.log('ser');
                 navbar.classList.add('sticky');
             } else {
                 navbar.classList.remove('sticky') ;
@@ -130,7 +141,7 @@ class Champagne {
     };
 
     _smoothScroll() {
-        const buttons = document.querySelectorAll('.navbar__link');
+        const buttons = document.querySelectorAll('.link');
         buttons.forEach(but => {
             but.addEventListener('click', (e) => {
                 e.preventDefault()
@@ -161,7 +172,6 @@ class Champagne {
         const showSection = ((entries, observer) => {
             const [entry] = entries;
             if (!entry.isIntersecting) return 
-            console.log(entry.target)
             entry.target.classList.toggle('hidden-section')
             observer.unobserve(entry.target)
             
@@ -173,6 +183,78 @@ class Champagne {
             sec.classList.add('hidden-section')
             sectionFadeIn.observe(sec)
         } )
+    }
+
+    _specialOfferTimer() {
+        const timer = document.querySelector('.special__offer__timer')
+        let time = 300
+        let minutes = String(Math.trunc(time / 60)).padStart(2, 0);
+        let seconds = String((time % 60)).padStart(2, 0);
+        timer.textContent =  `${minutes}: ${seconds}`
+
+        setInterval(() => {
+            // time in seconds
+            if (time >= 0) {
+                --time 
+                let minutes = String(Math.trunc(time / 60)).padStart(2, 0);
+                let seconds = String((time % 60)).padStart(2, 0);
+                timer.textContent = `${minutes}: ${seconds}`
+            }
+            time = time <= 0 ? 130 : time
+            
+            
+        }, 1000)
+    }
+
+    _hideOffer() {
+        const specialOfferContainer = document.querySelector('.special__offer')
+        specialOfferContainer.classList.add('hidden')
+    }
+
+    _createDots() {
+        const dotContainer = document.querySelector('.slider__dots')
+        this.#slides.forEach((_, i) => {
+            dotContainer.insertAdjacentHTML('beforeend', `<button class="slider__dot" data-dot="${i}"></button>`)
+        })
+    }
+
+    _dotOnClick() {
+        const dotsContainer = document.querySelector('.slider__dots')
+        dotsContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('slider__dot')) {
+               const activeDot = e.target;
+               this._moveToSlide(activeDot.dataset.dot)
+               const siblings = activeDot.closest('.slider__dots').querySelectorAll('.slider__dot');
+               siblings.forEach(sib => sib = sib !== activeDot ?  sib.classList.remove('slider__dot--active') : activeDot.classList.add('slider__dot--active'))
+            }
+        })
+    }
+    
+    _activateDots(curSlide) {
+        const dots = document.querySelectorAll('.slider__dot')
+        dots.forEach(dot => dot = Number(dot.dataset.dot) === Number(curSlide) ? dot.classList.add('slider__dot--active') :  dot.classList.remove('slider__dot--active')  )
+    }
+
+
+    _specialOfferCloseObserver() {
+        const specialOffer = document.querySelector('.special__offer')
+        const contact = document.querySelector('.contact')
+
+        const options = {
+            root: null,
+            threshold: 0.5
+        }
+
+        const hideOffer = function(entries, observer) {
+            const [entry] = entries;
+            if (!entry.isIntersecting) return;
+            console.log(entry.target)
+            specialOffer.classList.add('hidden')
+            observer.unobserve(entry.target)
+
+        }
+        const observer = new IntersectionObserver(hideOffer, options)
+        observer.observe(contact)
     }
     
 };
