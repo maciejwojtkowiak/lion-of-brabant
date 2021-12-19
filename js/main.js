@@ -6,11 +6,13 @@ class Champagne {
     #slides = document.querySelectorAll('.slide');
     #navbar = document.querySelector('.navbar')
     #specialOfferCloseButton = document.querySelector('.special__offer__close-button')
+    #specialOfferContactLink = document.querySelector('.special__offer__link')
     #activeModal;
     constructor() {
         this.#navbar.addEventListener('mouseover', (e) => this._fadeLink(e, 0.5))
         this.#navbar.addEventListener('mouseout', (e) => this._fadeLink(e, 1))
         this.#specialOfferCloseButton.addEventListener('click', this._hideOffer)
+        this.#specialOfferContactLink.addEventListener('click', this._hideOffer)
         this._showModal();
         this._hideModal();
         this._slider();
@@ -21,6 +23,7 @@ class Champagne {
         this._createDots();
         this._dotOnClick();
         this._activateDots(0);
+        this._specialOfferCloseObserver();
         
        
     }
@@ -215,7 +218,7 @@ class Champagne {
         })
     }
 
-    _dotOnClick(curSlide) {
+    _dotOnClick() {
         const dotsContainer = document.querySelector('.slider__dots')
         dotsContainer.addEventListener('click', (e) => {
             if (e.target.classList.contains('slider__dot')) {
@@ -230,6 +233,28 @@ class Champagne {
     _activateDots(curSlide) {
         const dots = document.querySelectorAll('.slider__dot')
         dots.forEach(dot => dot = Number(dot.dataset.dot) === Number(curSlide) ? dot.classList.add('slider__dot--active') :  dot.classList.remove('slider__dot--active')  )
+    }
+
+
+    _specialOfferCloseObserver() {
+        const specialOffer = document.querySelector('.special__offer')
+        const contact = document.querySelector('.contact')
+
+        const options = {
+            root: null,
+            threshold: 0.5
+        }
+
+        const hideOffer = function(entries, observer) {
+            const [entry] = entries;
+            if (!entry.isIntersecting) return;
+            console.log(entry.target)
+            specialOffer.classList.add('hidden')
+            console.log('HELLo')
+
+        }
+        const observer = new IntersectionObserver(hideOffer, options)
+        observer.observe(contact)
     }
     
 };
