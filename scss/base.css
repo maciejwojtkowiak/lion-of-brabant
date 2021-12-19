@@ -599,6 +599,11 @@ a, button {
   background-color: transparent;
   left: 5%;
 }
+@media only screen and (max-width: 30em) {
+  .slider__previous {
+    left: 2%;
+  }
+}
 .slider__next {
   position: absolute;
   top: 50%;
@@ -610,6 +615,11 @@ a, button {
   display: inline-block;
   background-color: transparent;
   right: 5%;
+}
+@media only screen and (max-width: 30em) {
+  .slider__next {
+    right: 2%;
+  }
 }
 .slider__dots {
   padding: 0;
@@ -655,11 +665,28 @@ a, button {
   padding: 0 10rem;
   text-align: center;
 }
+@media only screen and (max-width: 30em) {
+  .slide__card {
+    gap: 4rem;
+    width: 50vw;
+  }
+}
 .slide__card__header {
   font-size: 5.5rem;
 }
+@media only screen and (max-width: 30em) {
+  .slide__card__header {
+    font-size: 5rem;
+  }
+}
 .slide__card__opinion {
   font-size: 2rem;
+}
+@media only screen and (max-width: 30em) {
+  .slide__card__opinion {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
 }
 .slide__card__user--image {
   width: 7rem;
@@ -671,6 +698,12 @@ a, button {
   font-size: 2rem;
   font-family: "Oooh Baby", cursive;
   letter-spacing: 0.1rem;
+}
+@media only screen and (max-width: 30em) {
+  .slide__card__user--data {
+    font-size: 3rem;
+    font-weight: 400;
+  }
 }
 .slide__card::before {
   content: '"';
@@ -691,6 +724,11 @@ a, button {
   flex-direction: column;
   border-bottom: 0.2rem solid #886841;
   background-color: #886841;
+}
+@media only screen and (max-width: 30em) {
+  .contact {
+    text-align: center;
+  }
 }
 .contact__header {
   font-size: 5rem;

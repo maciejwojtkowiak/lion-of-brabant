@@ -9,6 +9,10 @@
     @include borderBottomPrimary;
     background-color: $light--brown;
 
+    @media only screen and (max-width: $small) {
+        text-align: center;
+    }
+
    
 
     &__header {
