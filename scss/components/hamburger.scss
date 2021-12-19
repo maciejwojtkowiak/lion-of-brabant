@@ -1,0 +1,35 @@
+.navbar__hamburger {
+    width: 5rem;
+    height: 5rem;
+    border: white 2px solid;
+    display: grid;
+    place-items: center;
+    position: relative;
+
+    &--inner {
+        width: 2.5rem;
+        height: .5rem;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        
+
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background-color: white;
+        }
+
+        &::after {
+            transform: translateY(1.2rem)
+        }
+
+        &::before {
+            transform: translateY(-1.2rem);
+        }
+
+       
+    }
+}

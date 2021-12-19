@@ -236,6 +236,7 @@ a, button {
 
 .navbar {
   display: grid;
+  position: relative;
   grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
   width: 100%;
@@ -377,6 +378,35 @@ a, button {
   font-weight: 900;
 }
 
+.navbar__hamburger {
+  width: 5rem;
+  height: 5rem;
+  border: white 2px solid;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.navbar__hamburger--inner {
+  width: 2.5rem;
+  height: 0.5rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.navbar__hamburger--inner::after, .navbar__hamburger--inner::before {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: white;
+}
+.navbar__hamburger--inner::after {
+  transform: translateY(1.2rem);
+}
+.navbar__hamburger--inner::before {
+  transform: translateY(-1.2rem);
+}
+
 /* utilities */
 .hidden {
   visibility: hidden;
@@ -399,6 +429,7 @@ a, button {
 /* layouts */
 .navbar {
   display: grid;
+  position: relative;
   grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
   width: 100%;
