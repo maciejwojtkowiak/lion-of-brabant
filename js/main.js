@@ -5,27 +5,29 @@ class Champagne {
     #modalOverlay = document.querySelector('.overlay');
     #slides = document.querySelectorAll('.slide');
     #navbar = document.querySelector('.navbar')
+    #specialOfferCloseButton = document.querySelector('.special__offer__close-button')
     #activeModal;
     constructor() {
         this.#navbar.addEventListener('mouseover', (e) => this._fadeLink(e, 0.5))
         this.#navbar.addEventListener('mouseout', (e) => this._fadeLink(e, 1))
+        this.#specialOfferCloseButton.addEventListener('click', this._hideOffer)
         this._showModal();
         this._hideModal();
         this._slider();
         this._fixedNavbar();
         this._smoothScroll();
         this._revealSection();
-        this._specialOffer();
+        this._specialOfferTimer();
+        this._createDots();
+        
        
     }
 
     _fadeLink(e, opacity) {
             if (e.target.classList.contains('link')) {
                 const link = e.target;
-                console.log(link)
                 if (!link) return;
                 const siblings = link.closest('.navbar').querySelectorAll('.navbar__link')
-                console.log(siblings)
                 siblings.forEach(sib => sib.style.opacity = opacity)
                 link.style.opacity = "1"
                 
@@ -111,9 +113,7 @@ class Champagne {
     
         const stickNavbar = function(entries, observer) {
             const [entry] = entries;
-            console.log(entry)
             if (!entry.isIntersecting) {
-                console.log('ser');
                 navbar.classList.add('sticky');
             } else {
                 navbar.classList.remove('sticky') ;
@@ -162,7 +162,6 @@ class Champagne {
         const showSection = ((entries, observer) => {
             const [entry] = entries;
             if (!entry.isIntersecting) return 
-            console.log(entry.target)
             entry.target.classList.toggle('hidden-section')
             observer.unobserve(entry.target)
             
@@ -176,10 +175,9 @@ class Champagne {
         } )
     }
 
-    _specialOffer() {
-        const specialOfferContainer = document.querySelector('.special__offer')
+    _specialOfferTimer() {
         const timer = document.querySelector('.special__offer__timer')
-        let time = 5
+        let time = 300
         let minutes = String(Math.trunc(time / 60)).padStart(2, 0);
         let seconds = String((time % 60)).padStart(2, 0);
         timer.textContent =  `${minutes}: ${seconds}`
@@ -196,8 +194,23 @@ class Champagne {
             
             
         }, 1000)
-        
-        
+    }
+
+    _hideOffer() {
+        const specialOfferContainer = document.querySelector('.special__offer')
+        specialOfferContainer.classList.add('hidden')
+    }
+
+    _createDots() {
+        const dotContainer = document.querySelector('.slider__dots')
+        this.#slides.forEach((_, i) => {
+            dotContainer.insertAdjacentHTML('beforeend', `<button class="slider__dot" data-dot="${i}"></button>`)
+        })
+    }
+
+    _activateDots() {
+        const dots = document.querySelectorAll('.slider__dot')
+        dots.forEach(dot => console.log(dot.dataset.dot))
     }
     
 };

@@ -79,17 +79,17 @@ a, button {
 .modal__image--3 {
   background-image: url("../../images/recipe.jpg");
 }
-.modal__form {
+.modal__contact-form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border: #886841 0.5rem solid;
   border-radius: 10rem;
-  height: 80%;
+  height: 75%;
   width: 65%;
 }
-.modal__form__input {
+.modal__contact-form__input {
   margin: 1.5rem 0;
   color: white;
   width: 50%;
@@ -99,7 +99,7 @@ a, button {
   border-radius: 5rem;
   padding: 1rem;
 }
-.modal__form__text {
+.modal__contact-form__text {
   padding: 1rem;
   background-color: transparent;
   border: #886841 0.4rem solid;
@@ -107,16 +107,16 @@ a, button {
   margin-bottom: 1.5rem;
   color: white;
 }
-.modal__form__button {
+.modal__contact-form__button {
   margin-bottom: 1.5rem;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   text-decoration: none;
   background-color: #886841;
   font-size: 2.5rem;
   border-radius: 10rem;
   color: white;
 }
-.modal__form__button:active {
+.modal__contact-form__button:active {
   transform: translateY(-6px);
 }
 .modal__description {
@@ -132,12 +132,12 @@ a, button {
 }
 .modal__description__header {
   color: white;
-  margin-bottom: 2rem;
-  font-size: 8rem;
+  font-size: 7rem;
   font-weight: 800;
-  justify-self: center;
+  justify-self: flex-start;
   align-self: center;
   font-family: "Dancing Script", cursive;
+  padding-bottom: 2rem;
 }
 .modal__description__content {
   color: white;
@@ -197,24 +197,24 @@ a, button {
   height: 0.5rem;
   width: 100%;
   position: absolute;
-  left: 0;
-  top: 50%;
   background-color: white;
   color: white;
   transform-origin: center;
   transform: rotate(-45deg);
+  left: 0;
+  top: 50%;
 }
 .overlay__close-button--sign-inner::before {
   content: "";
   height: 0.5rem;
   width: 100%;
   position: absolute;
-  left: 0;
-  top: 50%;
   background-color: white;
   color: white;
   transform-origin: center;
   transform: rotate(45deg);
+  left: 0;
+  top: 50%;
 }
 
 ::-webkit-scrollbar {
@@ -268,7 +268,6 @@ a, button {
 }
 .navbar__link {
   padding-right: 2rem;
-  text-decoration: none;
   color: #886841;
   transition: all 0.5s;
 }
@@ -289,7 +288,7 @@ a, button {
   bottom: 0;
   left: 50%;
   width: 50%;
-  height: 15%;
+  height: 20%;
   z-index: 10;
   color: white;
   border-top-left-radius: 5rem;
@@ -303,6 +302,42 @@ a, button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transition: all 0.3s;
+}
+.special__offer__close-button {
+  position: fixed;
+  top: 10%;
+  right: 6%;
+  border: none;
+}
+.special__offer__close-button--box {
+  width: 3rem;
+  height: 2rem;
+  position: fixed;
+}
+.special__offer__close-button--inner::before {
+  content: "";
+  height: 0.5rem;
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  color: white;
+  transform-origin: center;
+  transform: rotate(-45deg);
+  left: 0;
+  top: 50%;
+}
+.special__offer__close-button--inner::after {
+  content: "";
+  height: 0.5rem;
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  color: white;
+  transform-origin: center;
+  transform: rotate(45deg);
+  left: 0;
+  top: 50%;
 }
 .special__offer__header {
   font-size: 5rem;
@@ -314,6 +349,12 @@ a, button {
 .special__offer__link {
   background-color: #886841;
   color: white;
+  margin: 1rem 0;
+  padding: 1rem 3rem;
+  font-size: 2.2rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 /* utilities */
@@ -329,6 +370,10 @@ a, button {
 .hidden-section {
   opacity: 0;
   transform: translateY(7rem);
+}
+
+.link {
+  text-decoration: none;
 }
 
 /* layouts */
@@ -371,7 +416,6 @@ a, button {
 }
 .navbar__link {
   padding-right: 2rem;
-  text-decoration: none;
   color: #886841;
   transition: all 0.5s;
 }
@@ -469,13 +513,14 @@ a, button {
   overflow: hidden;
   position: relative;
   display: grid;
-  place-items: stretch center;
+  place-items: center;
+  grid-template-rows: min-content;
   border-bottom: 0.2rem solid #886841;
 }
 .slider__header {
-  margin-top: 10rem;
   color: #886841;
   font-size: 3rem;
+  margin-top: 10rem;
 }
 .slider__previous {
   position: absolute;
@@ -500,6 +545,25 @@ a, button {
   display: inline-block;
   background-color: transparent;
   right: 5%;
+}
+.slider__dots {
+  padding: 0;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: inline-block;
+}
+.slider__dot {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 2rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #886841;
+}
+.slider__dot--active {
+  background-color: white;
 }
 
 .slide {
