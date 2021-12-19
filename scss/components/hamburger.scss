@@ -1,17 +1,26 @@
+@import '../abstracts/variables.scss';
+
 .navbar__hamburger {
     width: 5rem;
     height: 5rem;
-    border: white 2px solid;
-    display: grid;
-    place-items: center;
-    position: relative;
+    cursor: pointer;
+    margin-left: auto;
+    display: none;
+    
+
+    @media only screen and (max-width: $small) {
+        display: grid;
+        place-items: center;
+        margin-right: 2rem;
+    }
 
     &--inner {
-        width: 2.5rem;
+        width: 4rem;
         height: .5rem;
-        background-color: white;
+        background-color: $light--brown;
         display: flex;
         flex-direction: column;
+        position: relative;
         
 
         &::after, &::before {
@@ -19,15 +28,15 @@
             position: absolute;
             width: inherit;
             height: inherit;
-            background-color: white;
+            background-color: $light--brown;
         }
 
         &::after {
-            transform: translateY(1.2rem)
+            transform: translateY(1.5rem)
         }
 
         &::before {
-            transform: translateY(-1.2rem);
+            transform: translateY(-1.5rem);
         }
 
        

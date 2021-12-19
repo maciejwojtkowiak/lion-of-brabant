@@ -238,7 +238,8 @@ a, button {
   display: grid;
   position: relative;
   grid-template-columns: 1fr 1fr 1fr;
-  place-items: center;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   color: #886841;
   background-color: black;
@@ -249,7 +250,7 @@ a, button {
 }
 @media only screen and (max-width: 30em) {
   .navbar {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: min-content max-content min-content;
   }
 }
 .navbar__logo {
@@ -268,7 +269,9 @@ a, button {
 }
 @media only screen and (max-width: 30em) {
   .navbar__header {
-    display: none;
+    font-size: 6rem;
+    font-weight: 900;
+    letter-spacing: 0;
   }
 }
 .navbar__links {
@@ -285,6 +288,7 @@ a, button {
 @media only screen and (max-width: 30em) {
   .navbar__links {
     margin: 0;
+    display: none;
   }
 }
 .navbar__link {
@@ -381,30 +385,37 @@ a, button {
 .navbar__hamburger {
   width: 5rem;
   height: 5rem;
-  border: white 2px solid;
-  display: grid;
-  place-items: center;
-  position: relative;
+  cursor: pointer;
+  margin-left: auto;
+  display: none;
+}
+@media only screen and (max-width: 30em) {
+  .navbar__hamburger {
+    display: grid;
+    place-items: center;
+    margin-right: 2rem;
+  }
 }
 .navbar__hamburger--inner {
-  width: 2.5rem;
+  width: 4rem;
   height: 0.5rem;
-  background-color: white;
+  background-color: #886841;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .navbar__hamburger--inner::after, .navbar__hamburger--inner::before {
   content: "";
   position: absolute;
   width: inherit;
   height: inherit;
-  background-color: white;
+  background-color: #886841;
 }
 .navbar__hamburger--inner::after {
-  transform: translateY(1.2rem);
+  transform: translateY(1.5rem);
 }
 .navbar__hamburger--inner::before {
-  transform: translateY(-1.2rem);
+  transform: translateY(-1.5rem);
 }
 
 /* utilities */
@@ -431,7 +442,8 @@ a, button {
   display: grid;
   position: relative;
   grid-template-columns: 1fr 1fr 1fr;
-  place-items: center;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   color: #886841;
   background-color: black;
@@ -442,7 +454,7 @@ a, button {
 }
 @media only screen and (max-width: 30em) {
   .navbar {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: min-content max-content min-content;
   }
 }
 .navbar__logo {
@@ -461,7 +473,9 @@ a, button {
 }
 @media only screen and (max-width: 30em) {
   .navbar__header {
-    display: none;
+    font-size: 6rem;
+    font-weight: 900;
+    letter-spacing: 0;
   }
 }
 .navbar__links {
@@ -478,6 +492,7 @@ a, button {
 @media only screen and (max-width: 30em) {
   .navbar__links {
     margin: 0;
+    display: none;
   }
 }
 .navbar__link {
