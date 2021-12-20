@@ -115,8 +115,14 @@ a, button {
   width: 60vw;
   background-color: black;
 }
+@media only screen and (max-width: 30em) {
+  .modal__contact-form {
+    width: 90vw;
+    text-align: center;
+  }
+}
 .modal__contact-form--inputs {
-  width: 50%;
+  width: 80%;
   height: 90%;
   text-align: center;
   display: flex;

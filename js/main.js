@@ -236,7 +236,7 @@ class Champagne {
     
     _activateDots(curSlide) {
         const dots = document.querySelectorAll('.slider__dot')
-        dots.forEach(dot => dot = Number(dot.dataset.dot) === Number(curSlide) ? dot.classList.add('slider__dot--active') :  dot.classList.remove('slider__dot--active')  )
+        dots.forEach(dot => dot = Number(dot.dataset.dot) === Number(curSlide) ? dot.classList.add('slider__dot--active') :  dot.classList.remove('slider__dot--active'))
     }
 
 

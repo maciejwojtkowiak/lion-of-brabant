@@ -59,8 +59,14 @@
         width: 60vw;
         background-color: black;
 
+        @media only screen and (max-width: $small) {
+            width: 90vw;
+            text-align: center;
+        }
+
+
         &--inputs {
-            width: 50%;
+            width: 80%;
             height: 90%;
             text-align: center;
             @include flexCenter;
