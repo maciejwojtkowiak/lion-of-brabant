@@ -24,6 +24,7 @@ class Champagne {
         this._dotOnClick();
         this._activateDots(0);
         this._specialOfferCloseObserver();
+        this._hamburgerMenu();
         
        
     }
@@ -255,6 +256,14 @@ class Champagne {
         }
         const observer = new IntersectionObserver(hideOffer, options)
         observer.observe(contact)
+    }
+
+    _hamburgerMenu() {
+        const hamburger = document.querySelector('.navbar__hamburger');
+        const links = document.querySelector('.navbar__links')
+        hamburger.addEventListener('click', () => {
+            links.classList.toggle('navbar__links--active')
+        })
     }
     
 };

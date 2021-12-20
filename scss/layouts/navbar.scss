@@ -5,6 +5,7 @@
 .navbar {
     display: grid;
     position: relative;
+    height: 8vh;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between;
     align-items: center;
@@ -53,8 +54,23 @@
         margin-right: 2rem;
 
         @media only screen and (max-width: $small) {
-            margin: 0;
             display: none;
+        }
+
+        &--active {
+            @include flexCenter;
+            flex-direction: column;
+            justify-content: space-around;
+            position: absolute;
+            top: 10vh;
+            right: 0%;
+            height: 90vh;
+            width: 100%;;
+            z-index: 100;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            
         }
     }
 
@@ -62,6 +78,11 @@
        padding-right: 2rem;
        color: $light--brown;
        transition: all .5s;
+
+       @media only screen and (max-width: $small) {
+        font-size: 5rem;
+        
+    }
 
         &:last-child {
             padding-right: 0;
