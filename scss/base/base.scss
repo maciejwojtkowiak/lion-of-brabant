@@ -2,6 +2,9 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    @media only screen and (max-width: $medium) {
+        font-size: 50%;
+    }
     @media only screen and (max-width: $small) {
         font-size: 30%;
     }
