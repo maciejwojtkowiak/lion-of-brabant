@@ -54,22 +54,24 @@
         margin-right: 2rem;
 
         @media only screen and (max-width: $small) {
-            display: none;
-        }
-
-        &--active {
-            @include flexCenter;
-            flex-direction: column;
-            justify-content: space-around;
             position: fixed;
             top: 10vh;
             right: 0%;
             height: 90vh;
+            @include flexCenter;
+            transition: transform .5s;
+            transform: translateX(200%);
+            flex-direction: column;
+            justify-content: space-around;
             width: 100%;;
             z-index: 100;
             margin: 0;
             padding: 0;
             background-color: black;
+        }
+
+        &--active {
+           transform: translate(0%);
             
         }
     }
