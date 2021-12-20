@@ -324,6 +324,10 @@ a, button {
 }
 @media only screen and (max-width: 30em) {
   .navbar__links {
+    position: fixed;
+    top: 10vh;
+    right: 0%;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -331,10 +335,6 @@ a, button {
     transform: translateX(200%);
     flex-direction: column;
     justify-content: space-around;
-    position: fixed;
-    top: 10vh;
-    right: 0%;
-    height: 90vh;
     width: 100%;
     z-index: 100;
     margin: 0;
@@ -559,6 +559,10 @@ a, button {
 }
 @media only screen and (max-width: 30em) {
   .navbar__links {
+    position: fixed;
+    top: 10vh;
+    right: 0%;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -566,10 +570,6 @@ a, button {
     transform: translateX(200%);
     flex-direction: column;
     justify-content: space-around;
-    position: fixed;
-    top: 10vh;
-    right: 0%;
-    height: 90vh;
     width: 100%;
     z-index: 100;
     margin: 0;

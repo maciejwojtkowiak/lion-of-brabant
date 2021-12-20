@@ -119,7 +119,7 @@ class Champagne {
 
     _fixedNavbar() {
         const navbar =  document.querySelector('.navbar');
-        const navLinks = document.querySelector('.nav__links')
+        const navLinks = document.querySelector('.navbar__links')
         const main = document.querySelector('.header');
         const navHeight = navbar.getBoundingClientRect().height;
     
@@ -266,9 +266,11 @@ class Champagne {
         const links = document.querySelector('.navbar__links')
         hamburger.addEventListener('click', () => {
             links.classList.toggle('navbar__links--active');
+            this.#navbar.classList.add('sticky')
         })
 
         links.addEventListener('click', (e) => e.target.classList.contains('navbar__link') ? links.classList.remove('navbar__links--active') : null )
+        
     }
 
     
