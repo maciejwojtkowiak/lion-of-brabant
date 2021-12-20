@@ -21,7 +21,6 @@
         grid-template-columns: min-content max-content min-content;
     }
 
-
     &__logo {
         height: 8rem;
         width: 8rem;
@@ -45,6 +44,8 @@
 
         @media only screen and (max-width: $medium) {
             font-size: 5rem;
+            font-weight: 900;
+            letter-spacing: 0;
         }
         
     }
@@ -63,7 +64,7 @@
             top: 10vh;
             right: 0%;
             height: 90vh;
-            @include flexCenter;
+             @include flexCenter;
             transition: transform .5s;
             transform: translateX(200%);
             flex-direction: column;
