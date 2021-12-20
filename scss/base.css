@@ -111,13 +111,27 @@ a, button {
   flex-direction: column;
   border: #886841 0.5rem solid;
   border-radius: 10rem;
-  height: 75%;
-  width: 65%;
+  height: 85vh;
+  width: 60vw;
+  background-color: black;
+}
+.modal__contact-form--inputs {
+  width: 50%;
+  height: 90%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.modal__contact-form__header {
+  color: white;
+  font-size: 10rem;
 }
 .modal__contact-form__input {
   margin: 1.5rem 0;
+  width: 100%;
   color: white;
-  width: 50%;
   border: #886841 0.4rem solid;
   outline: none;
   background-color: transparent;
@@ -126,6 +140,8 @@ a, button {
 }
 .modal__contact-form__text {
   padding: 1rem;
+  width: 100%;
+  height: 100%;
   background-color: transparent;
   border: #886841 0.4rem solid;
   outline: none;

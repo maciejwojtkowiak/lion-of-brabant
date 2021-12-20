@@ -267,6 +267,7 @@ class Champagne {
 
         links.addEventListener('click', (e) => e.target.classList.contains('navbar__link') ? links.classList.remove('navbar__links--active') : null )
     }
+
     
 };
 
