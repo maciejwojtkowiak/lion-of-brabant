@@ -8,7 +8,12 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 60em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 35em) {
   html {
     font-size: 30%;
   }
@@ -60,7 +65,7 @@ a, button {
   z-index: 6;
   transition: all 0.3s;
 }
-@media only screen and (max-width: 50em) {
+@media only screen and (max-width: 60em) {
   .modal {
     width: 90%;
     height: 80%;
@@ -72,7 +77,7 @@ a, button {
   height: 65vh;
   width: 60vw;
 }
-@media only screen and (max-width: 50em) {
+@media only screen and (max-width: 60em) {
   .modal__card {
     width: 100%;
     height: 100%;
@@ -88,7 +93,7 @@ a, button {
   border: none;
   outline: none;
 }
-@media only screen and (max-width: 50em) {
+@media only screen and (max-width: 60em) {
   .modal__image {
     grid-area: 2/1/3/2;
   }
@@ -115,7 +120,7 @@ a, button {
   width: 60vw;
   background-color: black;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 60em) {
   .modal__contact-form {
     width: 90vw;
     text-align: center;
@@ -232,7 +237,7 @@ a, button {
   display: inline-block;
   cursor: pointer;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 35em) {
   .overlay__close-button {
     right: 10%;
     top: 2%;
@@ -297,7 +302,7 @@ a, button {
   padding: 2rem 0;
   border-bottom: 0.2rem solid #886841;
 }
-@media only screen and (max-width: 50em) {
+@media only screen and (max-width: 60em) {
   .navbar {
     grid-template-columns: min-content max-content min-content;
   }
@@ -316,14 +321,14 @@ a, button {
   justify-self: center;
   align-self: center;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 35em) {
   .navbar__header {
     font-size: 6rem;
     font-weight: 900;
     letter-spacing: 0;
   }
 }
-@media only screen and (max-width: 50em) {
+@media only screen and (max-width: 60em) {
   .navbar__header {
     font-size: 5rem;
     font-weight: 900;
@@ -341,7 +346,7 @@ a, button {
   margin-left: auto;
   margin-right: 2rem;
 }
-@media only screen and (max-width: 50em) {
+@media only screen and (max-width: 60em) {
   .navbar__links {
     position: fixed;
     top: 10vh;
@@ -369,7 +374,7 @@ a, button {
   color: #886841;
   transition: all 0.5s;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 35em) {
   .navbar__link {
     font-size: 5rem;
   }
@@ -404,7 +409,7 @@ a, button {
   flex-direction: column;
   transition: all 0.3s;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 35em) {
   .special__offer {
     width: 100%;
   }
@@ -469,7 +474,7 @@ a, button {
   margin-left: auto;
   display: none;
 }
-@media only screen and (max-width: 50em) {
+@media only screen and (max-width: 60em) {
   .navbar__hamburger {
     display: grid;
     place-items: center;
@@ -539,7 +544,7 @@ a, button {
   padding: 2rem 0;
   border-bottom: 0.2rem solid #886841;
 }
-@media only screen and (max-width: 50em) {
+@media only screen and (max-width: 60em) {
   .navbar {
     grid-template-columns: min-content max-content min-content;
   }
@@ -558,14 +563,14 @@ a, button {
   justify-self: center;
   align-self: center;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 35em) {
   .navbar__header {
     font-size: 6rem;
     font-weight: 900;
     letter-spacing: 0;
   }
 }
-@media only screen and (max-width: 50em) {
+@media only screen and (max-width: 60em) {
   .navbar__header {
     font-size: 5rem;
     font-weight: 900;
@@ -583,7 +588,7 @@ a, button {
   margin-left: auto;
   margin-right: 2rem;
 }
-@media only screen and (max-width: 50em) {
+@media only screen and (max-width: 60em) {
   .navbar__links {
     position: fixed;
     top: 10vh;
@@ -611,7 +616,7 @@ a, button {
   color: #886841;
   transition: all 0.5s;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 35em) {
   .navbar__link {
     font-size: 5rem;
   }
@@ -643,7 +648,7 @@ a, button {
   background-position: right;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 }
-@media only screen and (max-width: 50em) {
+@media only screen and (max-width: 60em) {
   .main {
     text-align: center;
   }
@@ -664,7 +669,7 @@ a, button {
   place-items: center;
   position: relative;
 }
-@media only screen and (max-width: 50em) {
+@media only screen and (max-width: 60em) {
   .features {
     grid-template-columns: 1fr;
     padding: 0;
@@ -684,7 +689,7 @@ a, button {
   height: 40vh;
   width: 20vw;
 }
-@media only screen and (max-width: 50em) {
+@media only screen and (max-width: 60em) {
   .card {
     height: 50%;
     width: 70%;
@@ -711,7 +716,7 @@ a, button {
   background-position: bottom;
   border-bottom: 0.2rem solid #886841;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 35em) {
   .gif {
     height: 50vh;
   }
@@ -722,12 +727,12 @@ a, button {
   letter-spacing: 1.2rem;
   font-weight: 900;
 }
-@media only screen and (max-width: 50em) {
+@media only screen and (max-width: 60em) {
   .gif__header {
     font-size: 6rem;
   }
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 35em) {
   .gif__header {
     font-size: 7rem;
     letter-spacing: 0.5rem;
@@ -749,6 +754,11 @@ a, button {
   font-size: 3rem;
   margin-top: 10rem;
 }
+@media only screen and (max-width: 60em) {
+  .slider__header {
+    font-size: 4rem;
+  }
+}
 .slider__previous {
   position: absolute;
   top: 50%;
@@ -761,7 +771,7 @@ a, button {
   background-color: transparent;
   left: 5%;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 35em) {
   .slider__previous {
     left: 2%;
   }
@@ -778,7 +788,7 @@ a, button {
   background-color: transparent;
   right: 5%;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 35em) {
   .slider__next {
     right: 2%;
   }
@@ -827,7 +837,13 @@ a, button {
   padding: 0 10rem;
   text-align: center;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 60em) {
+  .slide__card {
+    gap: 4rem;
+    width: 50vw;
+  }
+}
+@media only screen and (max-width: 35em) {
   .slide__card {
     gap: 4rem;
     width: 50vw;
@@ -836,7 +852,7 @@ a, button {
 .slide__card__header {
   font-size: 5.5rem;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 35em) {
   .slide__card__header {
     font-size: 5rem;
   }
@@ -844,7 +860,7 @@ a, button {
 .slide__card__opinion {
   font-size: 2rem;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 35em) {
   .slide__card__opinion {
     font-size: 1.8rem;
     font-weight: 600;
@@ -861,7 +877,7 @@ a, button {
   font-family: "Oooh Baby", cursive;
   letter-spacing: 0.1rem;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 35em) {
   .slide__card__user--data {
     font-size: 3rem;
     font-weight: 400;
@@ -887,9 +903,8 @@ a, button {
   border-bottom: 0.2rem solid #886841;
   background-color: #886841;
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 60em) {
   .contact {
-    overflow: hidden;
     text-align: center;
   }
 }

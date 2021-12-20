@@ -9,8 +9,7 @@
     @include borderBottomPrimary;
     background-color: $light--brown;
 
-    @media only screen and (max-width: $small) {
-        overflow: hidden;
+    @media only screen and (max-width: $medium) {
         text-align: center;
     }
 

@@ -16,6 +16,10 @@
         color: $light--brown;
         font-size: 3rem;
         margin-top: 10rem;
+
+        @media only screen and (max-width: $medium) {
+            font-size: 4rem;
+        }
     }
 
     &__previous {
@@ -82,12 +86,18 @@
         padding: 0 10rem;
         text-align: center;
 
+        @media only screen and (max-width: $medium) {
+            gap: 4rem;
+            width: 50vw;
+        }
+
         @media only screen and (max-width: $small) {
             gap: 4rem;
             width: 50vw;
         }
         &__header {
             font-size: 5.5rem;
+
             @media only screen and (max-width: $small) {
                 font-size: 5rem;
             }
