@@ -1,0 +1,44 @@
+@import '../abstracts/variables.scss';
+
+.navbar__hamburger {
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    margin-left: auto;
+    display: none;
+    
+
+    @media only screen and (max-width: $small) {
+        display: grid;
+        place-items: center;
+        margin-right: 2rem;
+    }
+
+    &--inner {
+        width: 4rem;
+        height: .5rem;
+        background-color: $light--brown;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        
+
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background-color: $light--brown;
+        }
+
+        &::after {
+            transform: translateY(1.5rem)
+        }
+
+        &::before {
+            transform: translateY(-1.5rem);
+        }
+
+       
+    }
+}

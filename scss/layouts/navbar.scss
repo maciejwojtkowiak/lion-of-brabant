@@ -4,8 +4,10 @@
 
 .navbar {
     display: grid;
+    position: relative;
     grid-template-columns: 1fr 1fr 1fr;
-    place-items: center;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     color: $light--brown;
     background-color: black;
@@ -15,7 +17,7 @@
     @include borderBottomPrimary;
 
     @media only screen and (max-width: $small) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: min-content max-content min-content;
     }
 
     &__logo {
@@ -34,7 +36,9 @@
         justify-self: center;
         align-self: center;
         @media only screen and (max-width: $small) {
-            display: none;
+            font-size: 6rem;
+            font-weight: 900;
+            letter-spacing: 0;
         }
         
     }
@@ -50,6 +54,7 @@
 
         @media only screen and (max-width: $small) {
             margin: 0;
+            display: none;
         }
     }
 

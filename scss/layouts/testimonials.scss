@@ -20,11 +20,19 @@
     &__previous {
         @include slideButton;
         left: 5%;
+
+        @media only screen and (max-width: $small) {
+            left: 2%;
+        }
     }
 
     &__next {
         @include slideButton;
         right: 5%;
+
+        @media only screen and (max-width: $small) {
+            right: 2%;
+        }
     }
 
     &__dots {
@@ -72,11 +80,23 @@
         gap: 6rem;
         padding: 0 10rem;
         text-align: center;
+
+        @media only screen and (max-width: $small) {
+            gap: 4rem;
+            width: 50vw;
+        }
         &__header {
             font-size: 5.5rem;
+            @media only screen and (max-width: $small) {
+                font-size: 5rem;
+            }
         }
         &__opinion {
             font-size: 2rem;
+            @media only screen and (max-width: $small) {
+                font-size: 1.8rem;
+                font-weight: 600;
+            }
         }
 
         &__user {
@@ -91,6 +111,10 @@
                font-size: 2rem;
                font-family: "Oooh Baby", cursive;
                letter-spacing: .1rem;
+               @media only screen and (max-width: $small) {
+                font-size: 3rem;
+                font-weight: 400;
+            }
             }
         }
         

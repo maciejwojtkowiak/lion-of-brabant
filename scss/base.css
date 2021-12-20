@@ -8,7 +8,7 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
-@media only screen and (max-width: 22.5em) {
+@media only screen and (max-width: 30em) {
   html {
     font-size: 30%;
   }
@@ -236,8 +236,10 @@ a, button {
 
 .navbar {
   display: grid;
+  position: relative;
   grid-template-columns: 1fr 1fr 1fr;
-  place-items: center;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   color: #886841;
   background-color: black;
@@ -246,9 +248,9 @@ a, button {
   padding: 2rem 0;
   border-bottom: 0.2rem solid #886841;
 }
-@media only screen and (max-width: 22.5em) {
+@media only screen and (max-width: 30em) {
   .navbar {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: min-content max-content min-content;
   }
 }
 .navbar__logo {
@@ -265,9 +267,11 @@ a, button {
   justify-self: center;
   align-self: center;
 }
-@media only screen and (max-width: 22.5em) {
+@media only screen and (max-width: 30em) {
   .navbar__header {
-    display: none;
+    font-size: 6rem;
+    font-weight: 900;
+    letter-spacing: 0;
   }
 }
 .navbar__links {
@@ -281,9 +285,10 @@ a, button {
   margin-left: auto;
   margin-right: 2rem;
 }
-@media only screen and (max-width: 22.5em) {
+@media only screen and (max-width: 30em) {
   .navbar__links {
     margin: 0;
+    display: none;
   }
 }
 .navbar__link {
@@ -377,6 +382,42 @@ a, button {
   font-weight: 900;
 }
 
+.navbar__hamburger {
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  margin-left: auto;
+  display: none;
+}
+@media only screen and (max-width: 30em) {
+  .navbar__hamburger {
+    display: grid;
+    place-items: center;
+    margin-right: 2rem;
+  }
+}
+.navbar__hamburger--inner {
+  width: 4rem;
+  height: 0.5rem;
+  background-color: #886841;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.navbar__hamburger--inner::after, .navbar__hamburger--inner::before {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: #886841;
+}
+.navbar__hamburger--inner::after {
+  transform: translateY(1.5rem);
+}
+.navbar__hamburger--inner::before {
+  transform: translateY(-1.5rem);
+}
+
 /* utilities */
 .hidden {
   visibility: hidden;
@@ -399,8 +440,10 @@ a, button {
 /* layouts */
 .navbar {
   display: grid;
+  position: relative;
   grid-template-columns: 1fr 1fr 1fr;
-  place-items: center;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   color: #886841;
   background-color: black;
@@ -409,9 +452,9 @@ a, button {
   padding: 2rem 0;
   border-bottom: 0.2rem solid #886841;
 }
-@media only screen and (max-width: 22.5em) {
+@media only screen and (max-width: 30em) {
   .navbar {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: min-content max-content min-content;
   }
 }
 .navbar__logo {
@@ -428,9 +471,11 @@ a, button {
   justify-self: center;
   align-self: center;
 }
-@media only screen and (max-width: 22.5em) {
+@media only screen and (max-width: 30em) {
   .navbar__header {
-    display: none;
+    font-size: 6rem;
+    font-weight: 900;
+    letter-spacing: 0;
   }
 }
 .navbar__links {
@@ -444,9 +489,10 @@ a, button {
   margin-left: auto;
   margin-right: 2rem;
 }
-@media only screen and (max-width: 22.5em) {
+@media only screen and (max-width: 30em) {
   .navbar__links {
     margin: 0;
+    display: none;
   }
 }
 .navbar__link {
@@ -484,6 +530,11 @@ a, button {
   background-position: right;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 }
+@media only screen and (max-width: 30em) {
+  .main {
+    text-align: center;
+  }
+}
 .main__header {
   color: white;
   font-size: 15rem;
@@ -499,11 +550,12 @@ a, button {
   place-items: center;
   position: relative;
 }
-@media only screen and (max-width: 22.5em) {
+@media only screen and (max-width: 30em) {
   .features {
     grid-template-columns: 1fr;
     padding: 0;
     width: 100%;
+    height: 120vh;
   }
 }
 
@@ -520,11 +572,10 @@ a, button {
   height: 40vh;
   width: 20vw;
 }
-@media only screen and (max-width: 22.5em) {
+@media only screen and (max-width: 30em) {
   .card {
-    height: 100%;
-    width: 100%;
-    padding: 0;
+    height: 50%;
+    width: 80%;
   }
 }
 .card__header {
@@ -549,11 +600,22 @@ a, button {
   transform: scale(1);
   border-bottom: 0.2rem solid #886841;
 }
+@media only screen and (max-width: 30em) {
+  .gif {
+    height: 30vh;
+  }
+}
 .gif__header {
   font-size: 8rem;
   color: white;
   letter-spacing: 1.2rem;
   font-weight: 200;
+}
+@media only screen and (max-width: 30em) {
+  .gif__header {
+    font-size: 4rem;
+    letter-spacing: 0;
+  }
 }
 
 .slider {
@@ -583,6 +645,11 @@ a, button {
   background-color: transparent;
   left: 5%;
 }
+@media only screen and (max-width: 30em) {
+  .slider__previous {
+    left: 2%;
+  }
+}
 .slider__next {
   position: absolute;
   top: 50%;
@@ -594,6 +661,11 @@ a, button {
   display: inline-block;
   background-color: transparent;
   right: 5%;
+}
+@media only screen and (max-width: 30em) {
+  .slider__next {
+    right: 2%;
+  }
 }
 .slider__dots {
   padding: 0;
@@ -639,11 +711,28 @@ a, button {
   padding: 0 10rem;
   text-align: center;
 }
+@media only screen and (max-width: 30em) {
+  .slide__card {
+    gap: 4rem;
+    width: 50vw;
+  }
+}
 .slide__card__header {
   font-size: 5.5rem;
 }
+@media only screen and (max-width: 30em) {
+  .slide__card__header {
+    font-size: 5rem;
+  }
+}
 .slide__card__opinion {
   font-size: 2rem;
+}
+@media only screen and (max-width: 30em) {
+  .slide__card__opinion {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
 }
 .slide__card__user--image {
   width: 7rem;
@@ -655,6 +744,12 @@ a, button {
   font-size: 2rem;
   font-family: "Oooh Baby", cursive;
   letter-spacing: 0.1rem;
+}
+@media only screen and (max-width: 30em) {
+  .slide__card__user--data {
+    font-size: 3rem;
+    font-weight: 400;
+  }
 }
 .slide__card::before {
   content: '"';
@@ -675,6 +770,11 @@ a, button {
   flex-direction: column;
   border-bottom: 0.2rem solid #886841;
   background-color: #886841;
+}
+@media only screen and (max-width: 30em) {
+  .contact {
+    text-align: center;
+  }
 }
 .contact__header {
   font-size: 5rem;

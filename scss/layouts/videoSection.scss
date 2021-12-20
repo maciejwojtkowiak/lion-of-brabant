@@ -10,11 +10,22 @@
     transform: scale(1);
     @include borderBottomPrimary;
 
+    @media only screen and (max-width: $small) {
+        height: 30vh
+    }
+
+    
+
     &__header {
         font-size: 8rem;
         color: white;
         letter-spacing: 1.2rem;
         font-weight: 200;
+
+        @media only screen and (max-width: $small) {
+            font-size: 4rem;
+            letter-spacing: 0;
+        }
 
     }
 }
