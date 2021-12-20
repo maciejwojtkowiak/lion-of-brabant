@@ -2,11 +2,11 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
-
     @media only screen and (max-width: $small) {
         font-size: 30%;
     }
 }
+
 
 
 * {
@@ -23,12 +23,12 @@ html {
 body {
     background-color: black;
     font-family: 'Montserrat', sans-serif;
-
     
 }
 
 ul, li {
     list-style-position:inside;
+    list-style: none;
 }
 
 textarea {

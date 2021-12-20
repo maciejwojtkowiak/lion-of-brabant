@@ -24,6 +24,7 @@ class Champagne {
         this._dotOnClick();
         this._activateDots(0);
         this._specialOfferCloseObserver();
+        this._hamburgerMenu();
         
        
     }
@@ -33,7 +34,7 @@ class Champagne {
                 const link = e.target;
                 if (!link) return;
                 const siblings = link.closest('.navbar').querySelectorAll('.navbar__link')
-                siblings.forEach(sib => sib.style.opacity = opacity)
+                siblings.forEach(sib => (!sib.classList.contains('navbar__logo')) ? sib.style.opacity = opacity : sib.style.opacity = "1")
                 link.style.opacity = "1"
                 
             };
@@ -118,6 +119,7 @@ class Champagne {
 
     _fixedNavbar() {
         const navbar =  document.querySelector('.navbar');
+        const navLinks = document.querySelector('.navbar__links')
         const main = document.querySelector('.header');
         const navHeight = navbar.getBoundingClientRect().height;
     
@@ -125,9 +127,11 @@ class Champagne {
             const [entry] = entries;
             if (!entry.isIntersecting) {
                 navbar.classList.add('sticky');
-            } else {
-                navbar.classList.remove('sticky') ;
-            };
+            } 
+            // if there is no hamburger menu then remove sticky
+            if (entry.isIntersecting && !navLinks.classList.contains('navbar__links--active')) {
+                navbar.classList.remove('sticky');
+            }
         };
         let observer = new IntersectionObserver(stickNavbar,{
             root: null,
@@ -232,7 +236,7 @@ class Champagne {
     
     _activateDots(curSlide) {
         const dots = document.querySelectorAll('.slider__dot')
-        dots.forEach(dot => dot = Number(dot.dataset.dot) === Number(curSlide) ? dot.classList.add('slider__dot--active') :  dot.classList.remove('slider__dot--active')  )
+        dots.forEach(dot => dot = Number(dot.dataset.dot) === Number(curSlide) ? dot.classList.add('slider__dot--active') :  dot.classList.remove('slider__dot--active'))
     }
 
 
@@ -256,6 +260,19 @@ class Champagne {
         const observer = new IntersectionObserver(hideOffer, options)
         observer.observe(contact)
     }
+
+    _hamburgerMenu() {
+        const hamburger = document.querySelector('.navbar__hamburger');
+        const links = document.querySelector('.navbar__links')
+        hamburger.addEventListener('click', () => {
+            links.classList.toggle('navbar__links--active');
+            this.#navbar.classList.add('sticky')
+        })
+
+        links.addEventListener('click', (e) => e.target.classList.contains('navbar__link') ? links.classList.remove('navbar__links--active') : null )
+        
+    }
+
     
 };
 

@@ -5,6 +5,7 @@
 .navbar {
     display: grid;
     position: relative;
+    height: 8vh;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between;
     align-items: center;
@@ -53,8 +54,25 @@
         margin-right: 2rem;
 
         @media only screen and (max-width: $small) {
+            position: fixed;
+            top: 10vh;
+            right: 0%;
+            height: 90vh;
+            @include flexCenter;
+            transition: transform .5s;
+            transform: translateX(200%);
+            flex-direction: column;
+            justify-content: space-around;
+            width: 100%;;
+            z-index: 100;
             margin: 0;
-            display: none;
+            padding: 0;
+            background-color: black;
+        }
+
+        &--active {
+           transform: translate(0%);
+            
         }
     }
 
@@ -63,6 +81,11 @@
        color: $light--brown;
        transition: all .5s;
 
+       @media only screen and (max-width: $small) {
+        font-size: 5rem;
+        
+    }
+
         &:last-child {
             padding-right: 0;
         }
@@ -70,11 +93,7 @@
 }
 
 
-.navbar.sticky {
-    position: fixed;
-   
-}
-
 .header {
     height: 100vh;
+    overflow: hidden;
 }

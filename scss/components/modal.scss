@@ -7,19 +7,33 @@
     transform: translate(-50%, -50%);
     z-index: 6;
     transition: all .3s;
+    @media only screen and (max-width: $small) {
+        width: 90%;
+        height: 80%;
+    }
 
     &__card {
-        display: flex;
+        display: grid;
+        grid-template-columns: 40% 60%;
         height: 65vh;
         width: 60vw;
+
+        @media only screen and (max-width: $small) {
+            width: 100%;
+            height: 100%;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
     }
     
     &__image {
         @include modalImagePosition;
         background-color: black;
-        flex: 4;
         border: none;
         outline: none;
+        @media only screen and (max-width: $small) {
+            grid-area: 2 / 1 / 3 / 2;
+        } 
         
         &--1 {
             background-image: url('../../images/sparkling.jpg');
@@ -41,13 +55,34 @@
         flex-direction: column;
         border: $light--brown .5rem solid;
         border-radius: 10rem;
-        height: 75%;
-        width: 65%;
+        height: 85vh;
+        width: 60vw;
+        background-color: black;
+
+        @media only screen and (max-width: $small) {
+            width: 90vw;
+            text-align: center;
+        }
+
+
+        &--inputs {
+            width: 80%;
+            height: 90%;
+            text-align: center;
+            @include flexCenter;
+            flex-direction: column;
+
+        }
+
+        &__header {
+            color: white;
+            font-size: 10rem;
+        }
         
         &__input {
             margin: 1.5rem 0;
+            width: 100%;
             color: white;
-            width: 50%;
             border: $light--brown .4rem solid;
             outline: none;
             background-color: transparent;
@@ -57,11 +92,14 @@
 
         &__text {
             padding: 1rem;
+            width: 100%;
+            height: 100%;
             background-color: transparent;
             border: $light--brown .4rem solid;
             outline: none;
             margin-bottom: 1.5rem;
             color: white;
+            
         }
 
         &__button {
@@ -78,6 +116,8 @@
                 transform: translateY(-6px);
             }
         }
+
+        
     }
 
     &__description {

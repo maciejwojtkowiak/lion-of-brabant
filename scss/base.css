@@ -32,6 +32,7 @@ body {
 
 ul, li {
   list-style-position: inside;
+  list-style: none;
 }
 
 textarea {
@@ -59,19 +60,38 @@ a, button {
   z-index: 6;
   transition: all 0.3s;
 }
+@media only screen and (max-width: 30em) {
+  .modal {
+    width: 90%;
+    height: 80%;
+  }
+}
 .modal__card {
-  display: flex;
+  display: grid;
+  grid-template-columns: 40% 60%;
   height: 65vh;
   width: 60vw;
+}
+@media only screen and (max-width: 30em) {
+  .modal__card {
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 }
 .modal__image {
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: black;
-  flex: 4;
   border: none;
   outline: none;
+}
+@media only screen and (max-width: 30em) {
+  .modal__image {
+    grid-area: 2/1/3/2;
+  }
 }
 .modal__image--1 {
   background-image: url("../../images/sparkling.jpg");
@@ -91,13 +111,33 @@ a, button {
   flex-direction: column;
   border: #886841 0.5rem solid;
   border-radius: 10rem;
-  height: 75%;
-  width: 65%;
+  height: 85vh;
+  width: 60vw;
+  background-color: black;
+}
+@media only screen and (max-width: 30em) {
+  .modal__contact-form {
+    width: 90vw;
+    text-align: center;
+  }
+}
+.modal__contact-form--inputs {
+  width: 80%;
+  height: 90%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.modal__contact-form__header {
+  color: white;
+  font-size: 10rem;
 }
 .modal__contact-form__input {
   margin: 1.5rem 0;
+  width: 100%;
   color: white;
-  width: 50%;
   border: #886841 0.4rem solid;
   outline: none;
   background-color: transparent;
@@ -106,6 +146,8 @@ a, button {
 }
 .modal__contact-form__text {
   padding: 1rem;
+  width: 100%;
+  height: 100%;
   background-color: transparent;
   border: #886841 0.4rem solid;
   outline: none;
@@ -229,7 +271,7 @@ a, button {
 }
 
 ::-webkit-scrollbar-thumb {
-  width: 0.2rem;
+  width: 0.1rem;
   background-color: #886841;
   border-radius: 10rem;
 }
@@ -237,6 +279,7 @@ a, button {
 .navbar {
   display: grid;
   position: relative;
+  height: 8vh;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
   align-items: center;
@@ -287,25 +330,44 @@ a, button {
 }
 @media only screen and (max-width: 30em) {
   .navbar__links {
+    position: fixed;
+    top: 10vh;
+    right: 0%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s;
+    transform: translateX(200%);
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    z-index: 100;
     margin: 0;
-    display: none;
+    padding: 0;
+    background-color: black;
   }
+}
+.navbar__links--active {
+  transform: translate(0%);
 }
 .navbar__link {
   padding-right: 2rem;
   color: #886841;
   transition: all 0.5s;
 }
+@media only screen and (max-width: 30em) {
+  .navbar__link {
+    font-size: 5rem;
+  }
+}
 .navbar__link:last-child {
   padding-right: 0;
 }
 
-.navbar.sticky {
-  position: fixed;
-}
-
 .header {
   height: 100vh;
+  overflow: hidden;
 }
 
 .special__offer {
@@ -328,6 +390,11 @@ a, button {
   align-items: center;
   flex-direction: column;
   transition: all 0.3s;
+}
+@media only screen and (max-width: 30em) {
+  .special__offer {
+    width: 100%;
+  }
 }
 .special__offer__close-button {
   position: fixed;
@@ -425,22 +492,29 @@ a, button {
 }
 
 .section {
-  transition: transform 1s, opacity 1s;
+  width: 100%;
+  transition: visibility 1s, opacity 1s, transform 1s;
 }
 
 .hidden-section {
-  opacity: 0;
   transform: translateY(7rem);
+  opacity: 0;
+  overflow-x: hidden;
 }
 
 .link {
   text-decoration: none;
 }
 
+.navbar.sticky {
+  position: fixed;
+}
+
 /* layouts */
 .navbar {
   display: grid;
   position: relative;
+  height: 8vh;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
   align-items: center;
@@ -491,25 +565,44 @@ a, button {
 }
 @media only screen and (max-width: 30em) {
   .navbar__links {
+    position: fixed;
+    top: 10vh;
+    right: 0%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s;
+    transform: translateX(200%);
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    z-index: 100;
     margin: 0;
-    display: none;
+    padding: 0;
+    background-color: black;
   }
+}
+.navbar__links--active {
+  transform: translate(0%);
 }
 .navbar__link {
   padding-right: 2rem;
   color: #886841;
   transition: all 0.5s;
 }
+@media only screen and (max-width: 30em) {
+  .navbar__link {
+    font-size: 5rem;
+  }
+}
 .navbar__link:last-child {
   padding-right: 0;
 }
 
-.navbar.sticky {
-  position: fixed;
-}
-
 .header {
   height: 100vh;
+  overflow: hidden;
 }
 
 @keyframes mainFadeIn {
@@ -597,7 +690,6 @@ a, button {
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: bottom;
-  transform: scale(1);
   border-bottom: 0.2rem solid #886841;
 }
 @media only screen and (max-width: 30em) {
@@ -613,7 +705,7 @@ a, button {
 }
 @media only screen and (max-width: 30em) {
   .gif__header {
-    font-size: 4rem;
+    font-size: 4.5rem;
     letter-spacing: 0;
   }
 }
@@ -773,6 +865,7 @@ a, button {
 }
 @media only screen and (max-width: 30em) {
   .contact {
+    overflow: hidden;
     text-align: center;
   }
 }

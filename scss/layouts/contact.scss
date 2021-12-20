@@ -10,6 +10,7 @@
     background-color: $light--brown;
 
     @media only screen and (max-width: $small) {
+        overflow: hidden;
         text-align: center;
     }
 

@@ -20,6 +20,11 @@
     flex-direction: column;
     transition: all .3s;
 
+    @media only screen and (max-width: $small) {
+        width: 100%;
+    }
+
+
    &__close-button {
        position: fixed;
        top: 10%;
