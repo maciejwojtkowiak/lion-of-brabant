@@ -34,7 +34,7 @@ class Champagne {
                 const link = e.target;
                 if (!link) return;
                 const siblings = link.closest('.navbar').querySelectorAll('.navbar__link')
-                siblings.forEach(sib => sib.style.opacity = opacity)
+                siblings.forEach(sib => (!sib.classList.contains('navbar__logo')) ? sib.style.opacity = opacity : sib.style.opacity = "1")
                 link.style.opacity = "1"
                 
             };
@@ -262,8 +262,10 @@ class Champagne {
         const hamburger = document.querySelector('.navbar__hamburger');
         const links = document.querySelector('.navbar__links')
         hamburger.addEventListener('click', () => {
-            links.classList.toggle('navbar__links--active')
+            links.classList.toggle('navbar__links--active');
         })
+
+        links.addEventListener('click', (e) => e.target.classList.contains('navbar__link') ? links.classList.remove('navbar__links--active') : null )
     }
     
 };

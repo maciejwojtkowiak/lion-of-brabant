@@ -4,14 +4,21 @@
 }
 
 .section {
-    transition: transform 1s, opacity 1s;
+    width: 100%;
+    transition: visibility 1s, opacity 1s, transform 1s,;
 }
 
 .hidden-section {
-    opacity: 0;
     transform: translateY(7rem);
+    opacity: 0;
+    overflow-x: hidden;
 }
 
 .link {
     text-decoration: none;
+}
+
+.navbar.sticky {
+    position: fixed;
+   
 }

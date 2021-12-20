@@ -2,11 +2,11 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
-
     @media only screen and (max-width: $small) {
         font-size: 30%;
     }
 }
+
 
 
 * {
@@ -24,6 +24,9 @@ body {
     background-color: black;
     font-family: 'Montserrat', sans-serif;
 
+    @media only screen and (max-width: $small) {
+       overflow-x: hidden;
+    }
     
 }
 

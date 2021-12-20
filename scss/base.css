@@ -29,6 +29,11 @@ body {
   background-color: black;
   font-family: "Montserrat", sans-serif;
 }
+@media only screen and (max-width: 30em) {
+  body {
+    overflow-x: hidden;
+  }
+}
 
 ul, li {
   list-style-position: inside;
@@ -230,7 +235,7 @@ a, button {
 }
 
 ::-webkit-scrollbar-thumb {
-  width: 0.2rem;
+  width: 0.1rem;
   background-color: #886841;
   border-radius: 10rem;
 }
@@ -298,7 +303,7 @@ a, button {
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  position: absolute;
+  position: fixed;
   top: 10vh;
   right: 0%;
   height: 90vh;
@@ -322,12 +327,9 @@ a, button {
   padding-right: 0;
 }
 
-.navbar.sticky {
-  position: fixed;
-}
-
 .header {
   height: 100vh;
+  overflow: hidden;
 }
 
 .special__offer {
@@ -447,16 +449,27 @@ a, button {
 }
 
 .section {
-  transition: transform 1s, opacity 1s;
+  width: 100%;
+  transition: visibility 1s, opacity 1s, transform 1s;
 }
 
 .hidden-section {
-  opacity: 0;
   transform: translateY(7rem);
+  opacity: 0;
+  overflow-x: hidden;
+}
+@media only screen and (max-width: 30em) {
+  .hidden-section {
+    opacity: 0;
+  }
 }
 
 .link {
   text-decoration: none;
+}
+
+.navbar.sticky {
+  position: fixed;
 }
 
 /* layouts */
@@ -523,7 +536,7 @@ a, button {
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  position: absolute;
+  position: fixed;
   top: 10vh;
   right: 0%;
   height: 90vh;
@@ -547,12 +560,9 @@ a, button {
   padding-right: 0;
 }
 
-.navbar.sticky {
-  position: fixed;
-}
-
 .header {
   height: 100vh;
+  overflow: hidden;
 }
 
 @keyframes mainFadeIn {
@@ -640,7 +650,6 @@ a, button {
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: bottom;
-  transform: scale(1);
   border-bottom: 0.2rem solid #886841;
 }
 @media only screen and (max-width: 30em) {
@@ -656,7 +665,7 @@ a, button {
 }
 @media only screen and (max-width: 30em) {
   .gif__header {
-    font-size: 4rem;
+    font-size: 4.5rem;
     letter-spacing: 0;
   }
 }
@@ -816,6 +825,7 @@ a, button {
 }
 @media only screen and (max-width: 30em) {
   .contact {
+    overflow: hidden;
     text-align: center;
   }
 }

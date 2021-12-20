@@ -7,7 +7,6 @@
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: bottom;
-    transform: scale(1);
     @include borderBottomPrimary;
 
     @media only screen and (max-width: $small) {
@@ -23,7 +22,7 @@
         font-weight: 200;
 
         @media only screen and (max-width: $small) {
-            font-size: 4rem;
+            font-size: 4.5rem;
             letter-spacing: 0;
         }
 

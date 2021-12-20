@@ -61,7 +61,7 @@
             @include flexCenter;
             flex-direction: column;
             justify-content: space-around;
-            position: absolute;
+            position: fixed;
             top: 10vh;
             right: 0%;
             height: 90vh;
@@ -91,11 +91,7 @@
 }
 
 
-.navbar.sticky {
-    position: fixed;
-   
-}
-
 .header {
     height: 100vh;
+    overflow: hidden;
 }
