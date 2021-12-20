@@ -119,6 +119,7 @@ class Champagne {
 
     _fixedNavbar() {
         const navbar =  document.querySelector('.navbar');
+        const navLinks = document.querySelector('.nav__links')
         const main = document.querySelector('.header');
         const navHeight = navbar.getBoundingClientRect().height;
     
@@ -126,9 +127,11 @@ class Champagne {
             const [entry] = entries;
             if (!entry.isIntersecting) {
                 navbar.classList.add('sticky');
-            } else {
-                navbar.classList.remove('sticky') ;
-            };
+            } 
+            // if there is no hamburger menu then remove sticky
+            if (entry.isIntersecting && !navLinks.classList.contains('navbar__links--active')) {
+                navbar.classList.remove('sticky');
+            }
         };
         let observer = new IntersectionObserver(stickNavbar,{
             root: null,
