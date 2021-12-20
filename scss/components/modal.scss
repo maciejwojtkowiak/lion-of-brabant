@@ -76,7 +76,7 @@
 
         &__header {
             color: white;
-            font-size: 10rem;
+            font-size: 8rem;
         }
         
         &__input {
@@ -190,11 +190,16 @@
         background-color: transparent;
         display: inline-block;
         cursor: pointer;
+
+        @media only screen and (max-width: $small) {
+            right: 10%;
+            top: 2%;
+        }
         &--sign-box {
             width: 5rem;
             height: 1rem;
             display: inline-block;
-            position: fixed;
+            position: absolute;
             margin-top: 2rem;
         }
 

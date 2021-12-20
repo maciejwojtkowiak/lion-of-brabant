@@ -17,9 +17,10 @@
     padding: 2rem 0;
     @include borderBottomPrimary;
 
-    @media only screen and (max-width: $small) {
+    @media only screen and (max-width: $medium) {
         grid-template-columns: min-content max-content min-content;
     }
+
 
     &__logo {
         height: 8rem;
@@ -41,6 +42,10 @@
             font-weight: 900;
             letter-spacing: 0;
         }
+
+        @media only screen and (max-width: $medium) {
+            font-size: 5rem;
+        }
         
     }
 
@@ -53,7 +58,7 @@
         margin-left: auto;
         margin-right: 2rem;
 
-        @media only screen and (max-width: $small) {
+        @media only screen and (max-width: $medium) {
             position: fixed;
             top: 10vh;
             right: 0%;

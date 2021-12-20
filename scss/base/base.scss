@@ -5,6 +5,10 @@ html {
     @media only screen and (max-width: $small) {
         font-size: 30%;
     }
+
+    @media only screen and (max-width: $medium) {
+        font-size: 50%;
+    }
 }
 
 
