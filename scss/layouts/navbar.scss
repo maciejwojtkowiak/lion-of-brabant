@@ -17,7 +17,7 @@
 
     @media only screen and (max-width: $large) {
         box-sizing: border-box;
-        z-index: 1000;
+        z-index: 8;
         grid-template-columns: min-content max-content min-content;
     }
 
@@ -76,7 +76,7 @@
             transform: translateX(200%);
             flex-direction: column;
             justify-content: space-around;
-            z-index: 100;
+            z-index: 7;
             margin: 0;
             padding: 0;
             background-color: black;
