@@ -12,11 +12,12 @@
     width: 100%;
     color: $light--brown;
     background-color: black;
-    z-index: 4;
     transition: all .5s;
     @include borderBottomPrimary;
 
-    @media only screen and (max-width: $medium-large) {
+    @media only screen and (max-width: $large) {
+        box-sizing: border-box;
+        z-index: 1000;
         grid-template-columns: min-content max-content min-content;
     }
 
@@ -64,7 +65,7 @@
         margin-left: auto;
         margin-right: 2rem;
 
-        @media only screen and (max-width: $medium-large) {
+        @media only screen and (max-width: $large) {
             position: absolute;
             top: 10vh;
             right: 0%;

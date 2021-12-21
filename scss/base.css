@@ -8,6 +8,11 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
+@media only screen and (max-width: 100em) {
+  html {
+    font-size: 55%;
+  }
+}
 @media only screen and (max-width: 48em) {
   html {
     font-size: 50%;
@@ -297,12 +302,13 @@ a, button {
   width: 100%;
   color: #886841;
   background-color: black;
-  z-index: 4;
   transition: all 0.5s;
   border-bottom: 0.2rem solid #886841;
 }
-@media only screen and (max-width: 65em) {
+@media only screen and (max-width: 100em) {
   .navbar {
+    box-sizing: border-box;
+    z-index: 1000;
     grid-template-columns: min-content max-content min-content;
   }
 }
@@ -352,7 +358,7 @@ a, button {
   margin-left: auto;
   margin-right: 2rem;
 }
-@media only screen and (max-width: 65em) {
+@media only screen and (max-width: 100em) {
   .navbar__links {
     position: absolute;
     top: 10vh;
@@ -487,7 +493,7 @@ a, button {
   display: none;
   /* active hamburger */
 }
-@media only screen and (max-width: 65em) {
+@media only screen and (max-width: 100em) {
   .navbar__hamburger {
     display: grid;
     place-items: center;
@@ -578,12 +584,13 @@ a, button {
   width: 100%;
   color: #886841;
   background-color: black;
-  z-index: 4;
   transition: all 0.5s;
   border-bottom: 0.2rem solid #886841;
 }
-@media only screen and (max-width: 65em) {
+@media only screen and (max-width: 100em) {
   .navbar {
+    box-sizing: border-box;
+    z-index: 1000;
     grid-template-columns: min-content max-content min-content;
   }
 }
@@ -633,7 +640,7 @@ a, button {
   margin-left: auto;
   margin-right: 2rem;
 }
-@media only screen and (max-width: 65em) {
+@media only screen and (max-width: 100em) {
   .navbar__links {
     position: absolute;
     top: 10vh;
@@ -699,7 +706,7 @@ a, button {
   background-position: right;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 }
-@media only screen and (max-width: 65em) {
+@media only screen and (max-width: 100em) {
   .main {
     text-align: center;
   }
@@ -720,7 +727,7 @@ a, button {
   place-items: center;
   position: relative;
 }
-@media only screen and (max-width: 65em) {
+@media only screen and (max-width: 100em) {
   .features {
     grid-template-columns: 1fr;
     padding: 0;
@@ -739,6 +746,14 @@ a, button {
   padding: 5rem 3rem 5rem 3rem;
   height: 40vh;
   width: 20vw;
+}
+@media only screen and (max-width: 100em) {
+  .card {
+    width: 50%;
+    height: 50vh;
+    padding: 0;
+    margin: 5rem 0 10rem 0;
+  }
 }
 @media only screen and (max-width: 65em) {
   .card {
