@@ -5,19 +5,19 @@
 .navbar {
     display: grid;
     position: relative;
-    height: 8vh;
+    height: 10vh;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     color: $light--brown;
     background-color: black;
-    z-index: 4;
     transition: all .5s;
-    padding: 2rem 0;
     @include borderBottomPrimary;
 
-    @media only screen and (max-width: $medium) {
+    @media only screen and (max-width: $large) {
+        box-sizing: border-box;
+        z-index: 8;
         grid-template-columns: min-content max-content min-content;
     }
 
@@ -47,6 +47,12 @@
             font-weight: 900;
             letter-spacing: 0;
         }
+
+        @media only screen and (max-width: $medium-large) {
+            font-size: 7rem;
+            font-weight: 900;
+            letter-spacing: 0;
+        }
         
     }
 
@@ -59,22 +65,31 @@
         margin-left: auto;
         margin-right: 2rem;
 
-        @media only screen and (max-width: $medium) {
-            position: fixed;
+        @media only screen and (max-width: $large) {
+            position: absolute;
             top: 10vh;
             right: 0%;
+            width: 65%;
             height: 90vh;
-             @include flexCenter;
+            @include flexCenter;
             transition: transform .5s;
             transform: translateX(200%);
             flex-direction: column;
             justify-content: space-around;
-            width: 100%;;
-            z-index: 100;
+            z-index: 7;
             margin: 0;
             padding: 0;
             background-color: black;
+            border-left: $light--brown .2rem solid;
         }
+
+        @media only screen and (max-width: $small) {
+            width: 100%;
+            
+        }
+
+
+
 
         &--active {
            transform: translate(0%);

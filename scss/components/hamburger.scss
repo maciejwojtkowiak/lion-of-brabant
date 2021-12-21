@@ -8,7 +8,7 @@
     display: none;
     
 
-    @media only screen and (max-width: $medium) {
+    @media only screen and (max-width: $large) {
         display: grid;
         place-items: center;
         margin-right: 2rem;
@@ -29,6 +29,7 @@
             width: inherit;
             height: inherit;
             background-color: $light--brown;
+            transition: transform .5s;
         }
 
         &::after {
@@ -37,6 +38,41 @@
 
         &::before {
             transform: translateY(-1.5rem);
+        }
+
+       
+    }
+
+
+
+    /* active hamburger */
+    &--inner--active {
+        width: 5rem;
+        height: .5rem;
+        background-color: $light--brown;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        visibility: hidden;
+        
+
+        &::after, &::before {
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background-color: $light--brown;
+            transition: transform .5s;
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+
+        &::before {
+            transform: rotate(45deg);
         }
 
        

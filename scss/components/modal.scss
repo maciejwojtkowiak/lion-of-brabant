@@ -5,9 +5,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 6;
+    z-index: 10;
     transition: all .3s;
-    @media only screen and (max-width: $medium) {
+    @media only screen and (max-width: $medium-large) {
         width: 90%;
         height: 80%;
     }
@@ -18,8 +18,8 @@
         height: 65vh;
         width: 60vw;
 
-        @media only screen and (max-width: $medium) {
-            width: 100%;
+        @media only screen and (max-width: $medium-large) {
+            width: 50vw;
             height: 100%;
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr;
@@ -31,7 +31,7 @@
         background-color: black;
         border: none;
         outline: none;
-        @media only screen and (max-width: $medium) {
+        @media only screen and (max-width: $medium-large) {
             grid-area: 2 / 1 / 3 / 2;
         } 
         
@@ -59,7 +59,7 @@
         width: 60vw;
         background-color: black;
 
-        @media only screen and (max-width: $medium) {
+        @media only screen and (max-width: $medium-large) {
             width: 90vw;
             text-align: center;
         }
@@ -177,7 +177,7 @@
     backdrop-filter: blur(15px);
     top: 0;
     left: 0;
-    z-index: 5;
+    z-index: 9;
     transition: all .3s;
     
 

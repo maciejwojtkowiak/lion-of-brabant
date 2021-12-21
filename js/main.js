@@ -262,10 +262,13 @@ class Champagne {
     }
 
     _hamburgerMenu() {
-        const hamburger = document.querySelector('.navbar__hamburger');
-        const links = document.querySelector('.navbar__links')
-        hamburger.addEventListener('click', () => {
+        const hamburgerBox = document.querySelector('.navbar__hamburger');
+        const links = document.querySelector('.navbar__links');
+        const hamburgerStripes = document.querySelector('.navbar__hamburger--inner')
+        hamburgerBox.addEventListener('click', () => {
             links.classList.toggle('navbar__links--active');
+            hamburgerStripes.classList.toggle('navbar__hamburger--inner--active')
+            hamburgerStripes.classList.toggle('navbar__hamburger--inner')
             this.#navbar.classList.add('sticky')
         })
 
