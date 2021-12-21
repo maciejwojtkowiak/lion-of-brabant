@@ -41,4 +41,38 @@
 
        
     }
+
+
+
+    /* active hamburger */
+    &--inner--active {
+        width: 5rem;
+        height: .5rem;
+        background-color: $light--brown;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        visibility: hidden;
+        
+
+        &::after, &::before {
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background-color: $light--brown;
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+       
+    }
 }

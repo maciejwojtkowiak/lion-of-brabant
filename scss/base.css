@@ -290,7 +290,7 @@ a, button {
 .navbar {
   display: grid;
   position: relative;
-  height: 8vh;
+  height: 10vh;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
   align-items: center;
@@ -299,7 +299,6 @@ a, button {
   background-color: black;
   z-index: 4;
   transition: all 0.5s;
-  padding: 2rem 0;
   border-bottom: 0.2rem solid #886841;
 }
 @media only screen and (max-width: 60em) {
@@ -348,9 +347,10 @@ a, button {
 }
 @media only screen and (max-width: 60em) {
   .navbar__links {
-    position: fixed;
+    position: absolute;
     top: 10vh;
     right: 0%;
+    width: 100%;
     height: 90vh;
     display: flex;
     justify-content: center;
@@ -359,11 +359,15 @@ a, button {
     transform: translateX(200%);
     flex-direction: column;
     justify-content: space-around;
-    width: 100%;
     z-index: 100;
     margin: 0;
     padding: 0;
     background-color: black;
+  }
+}
+@media only screen and (max-width: 35em) {
+  .navbar__links {
+    width: 100%;
   }
 }
 .navbar__links--active {
@@ -473,6 +477,7 @@ a, button {
   cursor: pointer;
   margin-left: auto;
   display: none;
+  /* active hamburger */
 }
 @media only screen and (max-width: 60em) {
   .navbar__hamburger {
@@ -501,6 +506,30 @@ a, button {
 }
 .navbar__hamburger--inner::before {
   transform: translateY(-1.5rem);
+}
+.navbar__hamburger--inner--active {
+  width: 5rem;
+  height: 0.5rem;
+  background-color: #886841;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  visibility: hidden;
+}
+.navbar__hamburger--inner--active::after, .navbar__hamburger--inner--active::before {
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: #886841;
+}
+.navbar__hamburger--inner--active::after {
+  transform: rotate(-45deg);
+}
+.navbar__hamburger--inner--active::before {
+  transform: rotate(45deg);
 }
 
 /* utilities */
@@ -532,7 +561,7 @@ a, button {
 .navbar {
   display: grid;
   position: relative;
-  height: 8vh;
+  height: 10vh;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
   align-items: center;
@@ -541,7 +570,6 @@ a, button {
   background-color: black;
   z-index: 4;
   transition: all 0.5s;
-  padding: 2rem 0;
   border-bottom: 0.2rem solid #886841;
 }
 @media only screen and (max-width: 60em) {
@@ -590,9 +618,10 @@ a, button {
 }
 @media only screen and (max-width: 60em) {
   .navbar__links {
-    position: fixed;
+    position: absolute;
     top: 10vh;
     right: 0%;
+    width: 100%;
     height: 90vh;
     display: flex;
     justify-content: center;
@@ -601,11 +630,15 @@ a, button {
     transform: translateX(200%);
     flex-direction: column;
     justify-content: space-around;
-    width: 100%;
     z-index: 100;
     margin: 0;
     padding: 0;
     background-color: black;
+  }
+}
+@media only screen and (max-width: 35em) {
+  .navbar__links {
+    width: 100%;
   }
 }
 .navbar__links--active {
