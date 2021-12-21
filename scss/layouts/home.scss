@@ -10,7 +10,7 @@
     background-position: right;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 
-    @media only screen and (max-width: $medium) {
+    @media only screen and (max-width: $medium-large) {
         text-align: center;
     }
 

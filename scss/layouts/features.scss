@@ -9,7 +9,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     place-items: center;
     position: relative;
-    @media only screen and (max-width: $medium) {
+    @media only screen and (max-width: $medium-large) {
         grid-template-columns: 1fr;
         padding: 0;
     }
@@ -29,8 +29,8 @@
     height: 40vh;
     width: 20vw;
 
-    @media only screen and (max-width: $medium) {
-        height: 50%;
+    @media only screen and (max-width: $medium-large) {
+        height: 60%;
         width: 70%;
 
     }
