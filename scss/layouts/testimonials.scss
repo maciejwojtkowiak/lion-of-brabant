@@ -3,12 +3,13 @@
 
 .slider {
     width: 100%;
-    height: 95vh;
+    height: 80vh;
     overflow: hidden;
     position: relative;
     display: grid;
     place-items: center;
     grid-template-rows: min-content;
+    text-align: center;
     @include borderBottomPrimary;
 
 
@@ -17,9 +18,24 @@
         font-size: 3rem;
         margin-top: 10rem;
 
-        @media only screen and (max-width: $medium-large) {
-            font-size: 4rem;
+        @media only screen and (max-width: $nest-hub-width) and (max-height: $nest-hub-height) {
+            margin-top: 1rem;
         }
+
+        @media only screen and (max-width: $medium-large) {
+            font-size: 3rem;
+        }
+
+        @media only screen and (max-width: $medium) {
+
+        }
+
+        @media only screen and (max-width: $small) {
+           
+         }
+
+
+       
     }
 
     &__previous {
@@ -27,7 +43,8 @@
         left: 5%;
 
         @media only screen and (max-width: $small) {
-            left: 2%;
+            left: 4%;
+            transform: scale(2.5);
         }
     }
 
@@ -36,7 +53,8 @@
         right: 5%;
 
         @media only screen and (max-width: $small) {
-            right: 2%;
+            right: 4%;
+            transform: scale(2.5);
         }
     }
 
@@ -48,7 +66,13 @@
         transform: translate(-50%, 0);
         display: inline-block;
         z-index: 3;
+
+        @media only screen and (max-width: $nest-hub-width) and (max-height: $nest-hub-height) {
+            bottom: 5%;
+        }
     }
+
+
 
     &__dot {
         width: 1rem;
@@ -72,11 +96,12 @@
     height: 95vh;
     display: grid;
     place-items: center;
+    margin: 2rem 0;
 
 
     &__card {
         width: 40vw;
-        height: 60%;
+        height: 70%;
         @include boxBorder;
         @include flexCenter;
         color: white;
@@ -86,10 +111,32 @@
         padding: 0 10rem;
         text-align: center;
 
+        @media only screen and (max-width: $nest-hub-width) and (max-height: $nest-hub-height) {
+            font-size: 1.6rem;
+            gap: 4rem;
+            width: 50vw;
+            height: 65%;
+         }
+
         @media only screen and (max-width: $medium-large) {
             gap: 4rem;
             width: 50vw;
+            height: 55%;
         }
+
+        @media only screen and (max-width: $medium) {
+            gap: 4rem;
+            width: 50vw;
+            height: 50%;
+        }
+
+
+        @media only screen and (max-width: $small) {
+            gap: 4rem;
+            width: 50vw;
+            height: 50%;
+        }
+
 
         &__header {
             font-size: 5.5rem;
@@ -97,16 +144,25 @@
             @media only screen and (max-width: $small) {
                 font-size: 5rem;
             }
+
         }
         &__opinion {
             font-size: 2rem;
+            @media only screen and (max-width: $nest-hub-width) and (max-height: $nest-hub-height) {
+                font-size: 1.4rem;
+             }
+
+            @media only screen and (max-width: $medium-large) {
+                 font-size: 2rem;
+             } 
             @media only screen and (max-width: $medium) {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
             }
             @media only screen and (max-width: $small) {
-                font-size: 1.8rem;
-                font-weight: 600;
+                font-size: 2.5rem;
             }
+
+            
         }
 
         &__user {
@@ -115,19 +171,28 @@
                 height: 7rem;
                 border-radius: 50%;
                 margin-bottom: 1.5rem;
+
+                @media only screen and (max-width: $medium-large) {
+                    width: 10rem;
+                    height: 10rem;
+                }
             }
+
+            
     
             &--data {
                font-size: 2rem;
                font-family: "Oooh Baby", cursive;
                letter-spacing: .1rem;
                @media only screen and (max-width: $medium-large) {
-                font-size: 2.5rem;
+                font-size: 4rem;
             }
                @media only screen and (max-width: $small) {
                 font-size: 3rem;
                 font-weight: 400;
             }
+
+            
             }
         }
         

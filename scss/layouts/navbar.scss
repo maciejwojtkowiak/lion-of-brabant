@@ -14,11 +14,15 @@
     background-color: black;
     transition: all .5s;
     @include borderBottomPrimary;
+    z-index: 8;
 
     @media only screen and (max-width: $large) {
         box-sizing: border-box;
-        z-index: 8;
         grid-template-columns: min-content max-content min-content;
+    }
+
+    @media only screen and (max-width: $nest-hub-width) and (max-height: $nest-hub-height) {
+        height: 15vh;
     }
 
     &__logo {
@@ -81,6 +85,10 @@
             padding: 0;
             background-color: black;
             border-left: $light--brown .2rem solid;
+
+            @media only screen and (max-width: $nest-hub-width) and (max-height: $nest-hub-height) {
+               top:15vh;
+             }
         }
 
         @media only screen and (max-width: $small) {
