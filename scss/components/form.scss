@@ -1,0 +1,69 @@
+.contact-form {
+    @include flexCenter;
+    flex-direction: column;
+    border: $light--brown .5rem solid;
+    border-radius: 10rem;
+    height: 85vh;
+    width: 60vw;
+    background-color: black;
+
+    @media only screen and (max-width: $medium-large) {
+        width: 90vw;
+        text-align: center;
+    }
+
+
+    &--inputs {
+        width: 80%;
+        height: 90%;
+        text-align: center;
+        @include flexCenter;
+        flex-direction: column;
+
+    }
+
+    &__header {
+        color: white;
+        font-size: 8rem;
+    }
+    
+    &__input {
+        margin: 1.5rem 0;
+        width: 100%;
+        color: white;
+        border: $light--brown .4rem solid;
+        outline: none;
+        background-color: transparent;
+        border-radius: 5rem;
+        padding: 1rem;
+    }
+
+    &__text {
+        padding: 1rem;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: $light--brown .4rem solid;
+        outline: none;
+        margin-bottom: 1.5rem;
+        color: white;
+        
+    }
+
+    &__button {
+        margin-bottom: 1.5rem;
+        padding: 1.5rem 1rem;
+        text-decoration: none;
+        background-color: $light--brown;
+        font-size: 2.5rem;
+        border-radius: 10rem;
+        color: white;
+        
+
+        &:active {
+            transform: translateY(-6px);
+        }
+    }
+
+    
+}
