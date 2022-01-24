@@ -1,9 +1,16 @@
 @import '../abstracts/variables.scss';
 @import '../abstracts/mixins.scss';
 
+.testimonial__header {
+    text-align: center;
+    color: $light--brown;
+    padding-top: 5rem;
+    font-size: 5rem;
+}
+
 .slider {
     width: 100%;
-    height: 100vh;
+    height: 95vh;
     overflow: hidden;
     position: relative;
     display: grid;
@@ -13,35 +20,10 @@
     @include borderBottomPrimary;
 
     @media only screen and (max-width: $small) {
-        height: 70vh;
+        height: 80vh;
         
     }
 
-
-    &__header {
-        color: $light--brown;
-        font-size: 3rem;
-        margin-top: 5rem;
-
-        @media only screen and (max-width: $nest-hub-width) and (max-height: $nest-hub-height) {
-            margin-top: 1rem;
-        }
-
-        @media only screen and (max-width: $medium-large) {
-            font-size: 3rem;
-        }
-
-        @media only screen and (max-width: $medium) {
-            margin-top: 8rem;
-        }
-
-        @media only screen and (max-width: $small) {
-            margin-top: 10rem;
-         }
-
-
-       
-    }
 
     &__previous {
         @include slideButton;
@@ -130,7 +112,7 @@
         @media only screen and (max-width: $medium-large) {
             gap: 4rem;
             width: 50vw;
-            height: 55%;
+            height: 75%;
         }
 
         @media only screen and (max-width: $medium) {
@@ -146,6 +128,7 @@
             gap: 4rem;
             width: 50vw;
             height: 50%;
+            font-size: 1.3rem;
         }
 
 
