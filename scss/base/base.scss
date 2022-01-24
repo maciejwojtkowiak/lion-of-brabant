@@ -2,8 +2,14 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
-    @media only screen and (max-width: $large) {
+    @media only screen and (max-width: $nest-hub-width) and (max-height: $nest-hub-height) {
         font-size: 55%;
+    }
+    @media only screen and (max-width: $large) {
+        font-size: 50%;
+    }
+    @media only screen and (max-width: $medium-large) {
+        font-size: 50%;
     }
     @media only screen and (max-width: $medium) {
         font-size: 50%;
